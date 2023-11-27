@@ -1,0 +1,451 @@
+.coursePage{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+    align-items: center;
+}
+.progressBar{
+    width: 80%;
+    border-radius: 15px;
+    height: 30px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.progresItem{
+    width: 100%;
+    height: 30px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid gray;
+    cursor: pointer;
+}
+.courseContainer{
+    width: 1310px;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+.selectLang{
+    width: 45%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 20px;
+}
+.langItem img{
+    width: 40px;
+    cursor: pointer;
+    transition: 0.1s;
+}
+.langItem img:hover{
+    transform: scale(1.1);
+}
+.langText{
+    font-size: 18px;
+    color: var(--textTitle);
+    font-weight: 600;
+}
+.courseSlider{
+    width: 1310px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transition: 1s;
+    display: flex;
+}
+.courseStage{
+    display: flex;
+}
+.slide{
+    width: 1310px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+.slideContent{
+    background: black;
+    opacity: 0.8;
+    width: 60%;
+    height: auto;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 10px;
+    padding: 20px;
+}
+.navButtons{
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+}
+.navButton{
+    width: 100px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    color: var(--textTitle);
+    border: 1px solid gray;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.navButton:hover{
+    background: #fce001;
+}
+.slideTitle{
+    font-size: 30px;
+    font-weight: 600;
+}
+.slideSubText{
+    font-size: 20px;
+    text-align: center;
+    width: 90%;
+}
+.bulletText{
+    font-size: 18px;
+    text-align: center;
+    color: white;
+}
+.slideAnswer{
+    background: #6bcb96;
+    width: 60%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    color: white;
+}
+.showAnswer{
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f8a62e;
+    padding: 20px;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.8s;
+}
+.showAnswer:hover{
+    font-size: 22px;
+}
+.isActiveClass{
+    background: var(--navAdminColor);
+    color: white;
+}
+.bulletPoint{
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+}
+.bulletPoint img{
+    width: 20px;
+}
+.submitTestQuesstion{
+    padding: 10px;
+    background: #f8a62e;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    cursor: pointer;
+}
+.downCertificate{
+    width: 150px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    color: white;
+    border: 1px solid gray;
+    border-radius: 10px;
+    cursor: pointer;
+    background: var(--navAdminColor);
+}
+.tryAgainButton{
+    width: 150px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    color: var(--textTitle);
+    border: 1px solid gray;
+    border-radius: 10px;
+    cursor: pointer;
+    background: #fce001;
+}
+.tryAgainDiv{
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+}
+.tryAgain{
+    font-size: 20px;
+    color: red;
+}
+.succesTest{
+    font-size: 20px;
+    color: green;
+}
+#eyeIcon{
+    width: 32px;
+    position: absolute;
+    bottom: 43px;
+    left: 86px;
+    background: #1b1e21;
+    padding: 11px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1;
+}
+#eyeIcon:hover{
+    background: #fec512;
+}
+.modalCourseComplete{
+    width: 50%;
+    height: auto;
+    padding: 30px 50px;
+    position: absolute;
+    z-index: 1;
+    background: white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin-top: 100px;
+}
+.modalRegisterComplete{
+    width: 50%;
+    height: 450px;
+    position: absolute;
+    top: 28px;
+    z-index: 1;
+    background: white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+.modalTitle{
+    margin-top: 20px;
+    font-size: 26px;
+    font-weight: bold;
+    color: var(--textTitle);
+}
+.modalText{
+    display: flex;
+    font-size: 20px;
+    color: var(--textTitle);
+    margin-top: 20px;
+}
+.practicalVideo{
+    width: 85%;
+    height: 600px;
+    margin-top: 30px;
+}
+.videoContainer{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 1200px;
+    row-gap: 50px;
+    margin-top: 30px;
+}
+.videoText{
+    width: 80%;
+    height: 600px;
+    color: var(--textTitle);
+    font-size: 1.3em;
+    padding-bottom: 50px;
+}
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+    height: 33px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+.landscape{
+    display: none;
+}
+
+
+@media screen and (max-width: 1200px) and (min-width: 569px){
+    .modalCourseComplete{
+        margin-top: 0px;
+    }
+    .courseContainer{
+        width: 95%;
+        height: 350px;
+    }
+    .courseSlider{
+        width: 100%;
+    }
+    .bulletText{
+        font-size: 13px;
+    }
+    .slideTitle{
+        font-size: 20px;
+    }
+    .slideSubText{
+        font-size: 16px;
+    }
+    .selectLang{
+        width: 90%;
+    }
+    #showHideNav{
+        display: none;
+    }
+    #hideNav{
+        display: none;
+    }
+    #eyeIcon{
+        left: 45px;
+    }
+    .modalRegisterComplete{
+        width: 60%;
+        height: auto;
+        padding: 20px 50px;
+        position: absolute;
+        top: 28px;
+        z-index: 1;
+        background: white;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+}
+@media screen and (max-width: 568px) and (min-width: 100px){
+    .modalCourseComplete{
+        margin-top: 0px;
+    }
+   .landscape{
+       display: flex;
+       width: 90%;
+       justify-content: center;
+       flex-direction: column;
+       align-items: center;
+       row-gap: 20px;
+   }
+    .landscapeText{
+        font-size: 20px;
+        color: var(--textTitle);
+    }
+    .landscape img{
+        width: 90%;
+    }
+    .coursePage{
+        display: none;
+    }
+    .searchUser{
+        display: none;
+    }
+    .hide{
+        display: none;
+    }
+    .paginationContainer{
+        display: none;
+    }
+    .modalRegisterComplete{
+        width: 60%;
+        height: auto;
+        padding: 20px 50px;
+        position: absolute;
+        top: 28px;
+        z-index: 1;
+        background: white;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+    .modalTitle{
+        text-align: center;
+    }
+    .modalText{
+        text-align: center;
+        width: 100%;
+    }
+}

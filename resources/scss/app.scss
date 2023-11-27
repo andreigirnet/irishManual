@@ -1,0 +1,99 @@
+/*
+Template Name: Velonic - Responsive Bootstrap 5 Admin Dashboard
+Version: 6.0.0
+Author: Techzaa
+File: Main Css File
+*/
+
+//
+// Lato font
+//
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+
+//Core files
+
+@import "./node_modules/bootstrap/scss/functions";
+@import "./node_modules/bootstrap/scss/variables";
+
+@import "resources/scss/config/_variables";
+@import "resources/scss/config/_variables-custom";
+@import "resources/scss/config/_variables-dark";
+@import "resources/scss/config/_theme-mode"; // Lght/Dark Mode
+@import "resources/scss/custom/components/_utilities";
+@import "./node_modules/bootstrap/scss/bootstrap";
+
+
+// Structure
+@import "resources/scss/custom/structure/_sidenav";
+@import "resources/scss/custom/structure/_topbar";
+@import "resources/scss/custom/structure/_right-sidebar";
+@import "resources/scss/custom/structure/_page-head";
+@import "resources/scss/custom/structure/_footer";
+// Horizontal nav
+@import "resources/scss/custom/structure/_horizontal-nav";
+
+
+// Components
+@import "resources/scss/custom/components/_root";
+@import "resources/scss/custom/components/_accordions";
+@import "resources/scss/custom/components/_alert";
+@import "resources/scss/custom/components/_avatar";
+@import "resources/scss/custom/components/_breadcrumb";
+@import "resources/scss/custom/components/_buttons";
+@import "resources/scss/custom/components/_badge";
+@import "resources/scss/custom/components/_card";
+@import "resources/scss/custom/components/_custom-forms";
+@import "resources/scss/custom/components/_dropdown";
+@import "resources/scss/custom/components/_forms";
+@import "resources/scss/custom/components/_modal";
+@import "resources/scss/custom/components/_nav";
+@import "resources/scss/custom/components/_pagination";
+@import "resources/scss/custom/components/_popover";
+@import "resources/scss/custom/components/_print";
+@import "resources/scss/custom/components/_progress";
+@import "resources/scss/custom/components/_reboot";
+@import "resources/scss/custom/components/_tables";
+@import "resources/scss/custom/components/_type";
+@import "resources/scss/custom/components/_tooltip";
+@import "resources/scss/custom/components/_widgets";
+@import "resources/scss/custom/components/_social";
+@import "resources/scss/custom/components/_steps";
+@import "resources/scss/custom/components/_preloader";
+
+//Pages
+@import "resources/scss/custom/pages/_authentication";
+@import "resources/scss/custom/pages/_components-demo";
+@import "resources/scss/custom/pages/_error";
+@import "resources/scss/custom/pages/_faq";
+@import "resources/scss/custom/pages/_maintenance";
+@import "resources/scss/custom/pages/_tasks";
+@import "resources/scss/custom/pages/_email";
+@import "resources/scss/custom/pages/_profile";
+@import "resources/scss/custom/pages/_timeline";
+@import "resources/scss/custom/pages/_pricing";
+
+// Plugins
+@import "resources/scss/custom/plugins/_apexcharts";
+@import "resources/scss/custom/plugins/_calendar";
+@import "resources/scss/custom/plugins/_chartjs";
+@import "resources/scss/custom/plugins/_datatable";
+@import "resources/scss/custom/plugins/_daterange";
+@import "resources/scss/custom/plugins/_datepicker";
+@import "resources/scss/custom/plugins/_flatpickr";
+@import "resources/scss/custom/plugins/_dragula";
+@import "resources/scss/custom/plugins/_dropzone";
+@import "resources/scss/custom/plugins/_form-wizard";
+@import "resources/scss/custom/plugins/_maps";
+@import "resources/scss/custom/plugins/_quill-editor";
+@import "resources/scss/custom/plugins/_select2";
+@import "resources/scss/custom/plugins/_simplebar";
+@import "resources/scss/custom/plugins/_toaster";
+@import "resources/scss/custom/plugins/_bootstrap-touchspin";
+@import "resources/scss/custom/plugins/_bootstrap-timepicker";
+@import "resources/scss/custom/plugins/_typehead";
+@import "resources/scss/custom/plugins/_sparklines";
+@import "resources/scss/custom/plugins/_timepicker";
+@import "resources/scss/custom/plugins/_rateit";
+@import "resources/scss/custom/plugins/_responsive-table";
+@import "resources/scss/custom/plugins/_ion-rangeslider";
+@import "resources/scss/custom/plugins/_cropper";

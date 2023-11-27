@@ -1,0 +1,115 @@
+.qtyIcon{
+    width: 20px;
+    cursor: pointer;
+    transition: 1s;
+}
+.qtyContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80px;
+}
+.qtyInput{
+    border: none;
+    outline: none;
+    width: 15px;
+    font-size: 16px;
+    font-weight: 700;
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+.qtyIcon:hover{
+    transform: scale(1.1);
+}
+td{
+    font-size: 16px;
+    font-weight: 700;
+}
+th{
+    font-size: 20px;
+    font-weight: 700;
+}
+.deleteIcon{
+    border: none;
+}
+.goToCheckOutContainer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 20px;
+}
+.checkout{
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+.goToCheckOutWrap{
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 10px;
+}
+.cartTotal{
+    display: flex;
+    align-items: center;
+    font-size: 25px;
+    font-weight: 600;
+    column-gap: 5px;
+}
+.noticeDiscount{
+    border: 1px solid #ebccd1;
+    background: #f2dede;
+    color: #a94442;
+    padding: 10px;
+}
+.noticeDiscountHeader{
+    font-size: 18px;
+}
+.cartSubTotal{
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+    font-weight: 600;
+    opacity: 0.8;
+}
+.discount{
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+    font-weight: 600;
+    opacity: 0.8;
+}
+.linkCheckOut{
+    width: 100px;
+}
+
+@media screen and (max-width: 1200px) and (min-width: 768px){
+   .dashWrapper{
+        padding-bottom: 100px;
+   }
+}
+@media screen and (max-width: 481px) and (min-width: 250px){
+    .qtyContainer{
+        margin-top: 10px;
+    }
+}
+@media screen and (max-width: 767px) and (min-width: 250px){
+    .dashWrapper{
+        padding-bottom: 100px;
+    }
+}

@@ -1,0 +1,377 @@
+
+*{
+    --navAdminColor: #0a64bf;
+    margin: 0;
+    padding: 0;
+    --primary: #333333;
+    --hoverColor: #d9c208;
+    --yellowColor: #fce001;
+    --textTitle: #414141;
+    --mainWidth: 1178px;
+    --greenColor: #70bc40;
+    font-family: 'PT Sans Narrow', sans-serif;
+}
+.logo img{
+    width: 125px;
+}
+a{
+    text-decoration: none;
+}
+.adminButton{
+    width: 100px;
+    height: 40px;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    background: var(--yellowColor);
+    font-weight: 600;
+    color: var(--textTitle);
+    font-size: 16px;
+}
+.logoutButton:hover{
+    font-size: 15px;
+}
+.mainContainer{
+    width: 100%;
+    display: flex;
+}
+.adminSideNav{
+    width: 15%;
+    background: var(--navAdminColor);
+    height: calc(100vh - 70px);
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+}
+.side{
+    width: 15%;
+    background: var(--navAdminColor);
+    position: relative;
+}
+.navLinkAdmin{
+    display: flex;
+    align-items: center;
+    height: 60px;
+    column-gap: 10px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.navIconAdmin img{
+    width: 30px;
+    opacity: 0.5;
+    margin-left: 20px;
+}
+.navLinkName{
+    color: white;
+    font-weight: 700;
+}
+.navLinkAdmin:hover{
+    background: #053d79;
+}
+.adminContent{
+    width: 100%;
+    display: flex;
+    position: relative;
+    justify-content: center;
+}
+.adminWrap{
+    width: 85%;
+}
+.success-message{
+    width: 100%;
+    height: 40px;
+    background: #6bcb96;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.error-message{
+    width: 100%;
+    height: 40px;
+    background: #edaab0;
+    color: #721c24;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.adminHomePageDescription{
+    margin-top: 20px;
+}
+#errorDiv{
+    color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.urlPage{
+    padding: 15px;
+    color: gray;
+    font-size: 18px;
+    letter-spacing: 3px;
+    opacity: 0.8;
+}
+.errorContainer{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+}
+#adminDrop{
+   display: none;
+}
+.removeButton{
+    background: none;
+    border: none;
+    margin: 0;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+}
+.removeButton img{
+    width: 30px;
+}
+.searchUser{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 10px;
+    row-gap: 10px;
+}
+.searchUser form{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 10px;
+}
+.searchUser form input{
+    width: 50%;
+    height: 35px;
+    border-radius: 6px;
+    outline: none;
+    padding: 0 10px;
+}
+.searchText{
+    font-size: 18px;
+    color: var(--textTitle);
+}
+.searchButton{
+    width: 80px;
+    height: 35px;
+    background: var(--navAdminColor);
+    border-radius: 6px;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+.editLink img{
+    width: 35px;
+}
+.actionRow{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    column-gap: 20px;
+}
+.addEmployeeContainer{
+    display: flex;
+    column-gap: 30px;
+}
+.addEmployee{
+    width: 130px;
+    height: 55px;
+    background: var(--navAdminColor);
+    border-radius: 6px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 10px;
+    margin-top: 10px;
+}
+#existsForm{
+    display: none;
+}
+.greenMessageLogin{
+    color: #4cae4c;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+.addEmployeeEx{
+    width: 130px;
+    height: 55px;
+    background: #45a1ff;
+    border-radius: 6px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 10px;
+    margin-top: 10px;
+}
+#adminRegisterEmployee{
+    display: none;
+}
+#adminCreatePackage{
+    display: none;
+}
+.hideNav{
+    width: 32px;
+}
+.hideNavDiv{
+    padding: 10px;
+    cursor: pointer;
+}
+.hideNavMessage{
+    opacity: 0.8;
+    color: var(--textTitle);
+}
+#hideNavDiv{
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+}
+.paginationContainer{
+    width: 100%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 0 ;
+}
+.paginationContainer nav span{
+    text-decoration: none;
+    font-size: 16px;
+    color: var(--textTitle);
+}
+.paginationContainer nav a{
+    text-decoration: none;
+    font-size: 16px;
+    color: #0a64bf;
+}
+.paginationContainer nav{
+    display: flex;
+    column-gap: 20px;
+}
+.paginationSection{
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+    color: var(--textTitle);
+    column-gap: 20px;
+    margin: 50px 0px;
+}
+.hamButtonAdmin{
+    position: fixed;
+    bottom: 10px;
+    z-index: 6;
+    margin: 10px 20px;
+    border: 3px solid white;
+    background: #4467e8;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 55px;
+    height: 55px;
+    cursor: pointer;
+}
+.hamButtonAdmin img{
+    width: 30px;
+}
+#responsiveNavAdmin{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: black;
+    opacity: 0.9;
+    z-index: 5;
+}
+#responsiveNavMenuAdmin{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    row-gap: 15px;
+    flex-direction: column;
+}
+.responsiveNavItem{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    row-gap: 10px;
+}
+.responsiveNavItem a{
+    text-align: center;
+    color: white;
+    font-size: 20px;
+}
+.navLabel{
+    color: #fce001;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 15px;
+}
+
+@media screen and (max-width: 1200px) and (min-width: 768px){
+   .side{
+       display: none;
+   }
+    .adminContent{
+        width: 100%;
+    }
+    .adminWrap{
+        width: 100%;
+        padding-bottom: 100px;
+    }
+    .hamButtonAdmin{
+        display: flex;
+    }
+    .errorPhoto a{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .errorPhoto a img{
+        width: 80%;
+    }
+}
+@media screen and (max-width: 767px) and (min-width: 250px){
+    .errorPhoto a{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .errorPhoto a img{
+        width: 80%;
+    }
+    .side{
+        display: none;
+    }
+    .adminContent{
+        width: 100%;
+    }
+    .adminWrap{
+        width: 100%;
+        padding-bottom: 100px;
+    }
+    .hamButtonAdmin{
+        display: flex;
+    }
+}
