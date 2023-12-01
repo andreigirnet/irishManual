@@ -5,6 +5,20 @@
     @include('layouts.shared/title-meta', ['title' => $title])
     @yield('css')
     @include('layouts.shared/head-css', ['mode' => $mode ?? '', 'demo' => $demo ?? ''])
+    <link rel="stylesheet" href="{{asset("css/admin/navigationMain.css")}}">
+    <link rel="stylesheet" href="{{asset("css/admin/adminMain.css")}}">
+    <link rel="stylesheet" href="{{asset("css/admin/adminProfile.css")}}">
+    <link rel="stylesheet" href="{{asset("css/admin/homePageAdmin.css")}}">
+    <link rel="stylesheet" href="{{asset("css/front/landing.css")}}">
+    <link rel="stylesheet" href="{{asset("css/admin/consulting.css")}}">
+    <link rel="stylesheet" href="{{asset("css/admin/employeeRegister.css")}}">
+    <link rel="stylesheet" href="{{asset("css/admin/dashboard.css")}}">
+    <link rel="stylesheet" href="{{asset("css/admin/basket.css")}}">
+    <link rel="stylesheet" href="{{asset("css/admin/orders.css")}}">
+    <link rel="stylesheet" href="{{asset("css/admin/course.css")}}">
+    <link rel="stylesheet" href="{{asset("css/admin/checkout.css")}}">
+    <link rel="stylesheet" href="{{asset("css/admin/package.css")}}">
+    <link rel="stylesheet" href="{{asset("css/admin/share.css")}}">
 </head>
 
 <body>

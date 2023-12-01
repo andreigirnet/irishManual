@@ -42,7 +42,7 @@
             </div>
             <div class="product-info">
                 <div class="product-text">
-                    <h1>Manual Handling</h1>
+                    <h1 style="color: #014a22">Manual Handling</h1>
                     <h2>By {{env("app_name")}}</h2>
                     <div class="product-info-icons">
                         <div class="product-icons">
@@ -55,7 +55,7 @@
                         </div>
                         <div class="product-icons">
                             <img src="images/icons/money.png" alt="">
-                            <div style="font-weight: 600">Only 30€</div>
+                            <div style="font-weight: bold; font-size: 20px; color: #014a22">Only 25€</div>
                         </div>
                     </div>
                 </div>
@@ -69,13 +69,14 @@
     </div>
 
     <div class="langTitle" data-aos="fade-up">
-        <div class="languageText">Our Course is available in 5 languages:</div>
+        <div class="languageText">When you start the course, you'll have the opportunity to choose from that 6 languages:</div>
         <div class="languagesSection">
             <img src="{{asset('images/flags/en.png')}}" alt="">
             <img src="{{asset('images/flags/pl.png')}}" alt="">
             <img src="{{asset('images/flags/ro.png')}}" alt="">
             <img src="{{asset('images/flags/ru.png')}}" alt="">
             <img src="{{asset('images/flags/sp.png')}}" alt="">
+            <img src="{{asset('images/flags/ukr.png')}}" alt="">
         </div>
     </div>
 

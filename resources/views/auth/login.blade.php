@@ -46,7 +46,7 @@
                                             <div class="mb-3">
                                                 <label for="emailaddress" class="form-label">Email address</label>
                                                 <input class="form-control" type="email" name="email" id="emailaddress"
-                                                    placeholder="Enter your email" value="test@test.com">
+                                                    placeholder="Enter your email" value="">
                                             </div>
                                             <div class="mb-3">
                                                 <a href="auth-forgotpw.html" class="text-muted float-end"><small>Forgot

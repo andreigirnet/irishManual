@@ -2,260 +2,110 @@
 
 @section('content')
 @include('layouts.shared/page-title', ['sub_title' => 'Menu', 'page_title' => 'Dashboard'])
-
-    <div class="row">
-        <div class="col-xxl-3 col-sm-6">
-            <div class="card widget-flat text-bg-pink">
-                <div class="card-body">
-                    <div class="float-end">
-                        <i class="ri-eye-line widget-icon"></i>
-                    </div>
-                    <h6 class="text-uppercase mt-0" title="Customers">Daily Visits</h6>
-                    <h2 class="my-2">8,652</h2>
-                    <p class="mb-0">
-                        <span class="badge bg-white bg-opacity-10 me-1">2.97%</span>
-                        <span class="text-nowrap">Since last month</span>
-                    </p>
+<div class="homePageAdminContent">
+    @if (session('created'))
+        <div class="modalRegisterComplete" id="modalRegisterEmployer">
+            <div class="modalTitle">Hi there</div>
+            <p>Its <a href="{{route('home')}}">irish-safetytraining.com</a> Training Centre here.</p>
+            <div class="modalText">
+                <div>
+                    If you need any additional information or help pls feel free to contact us anytime through the chat on our website.
+                    <br><br>
+                    You can take the course by following the steps from our website if you are logged in or come back later anytime through your email that was sent to you right now from our system using your login details ( password & email).Check your spam/junk mail just in case.
+                    <br><br>
+                    You can choose the language you need for taking your training after the payment it’s processed successfully (English/Polish/Spanish/Russian/Romanian)
+                    <br><br>
+                    We are assisting our customers from 10am till 7-8pm every single day including weekends.
                 </div>
             </div>
-        </div> <!-- end col-->
-
-        <div class="col-xxl-3 col-sm-6">
-            <div class="card widget-flat text-bg-purple">
-                <div class="card-body">
-                    <div class="float-end">
-                        <i class="ri-wallet-2-line widget-icon"></i>
-                    </div>
-                    <h6 class="text-uppercase mt-0" title="Customers">Revenue</h6>
-                    <h2 class="my-2">$9,254.62</h2>
-                    <p class="mb-0">
-                        <span class="badge bg-white bg-opacity-10 me-1">18.25%</span>
-                        <span class="text-nowrap">Since last month</span>
-                    </p>
-                </div>
+            <div class="modalText">
+                Kind regards
             </div>
-        </div> <!-- end col-->
-
-        <div class="col-xxl-3 col-sm-6">
-            <div class="card widget-flat text-bg-info">
-                <div class="card-body">
-                    <div class="float-end">
-                        <i class="ri-shopping-basket-line widget-icon"></i>
-                    </div>
-                    <h6 class="text-uppercase mt-0" title="Customers">Orders</h6>
-                    <h2 class="my-2">753</h2>
-                    <p class="mb-0">
-                        <span class="badge bg-white bg-opacity-25 me-1">-5.75%</span>
-                        <span class="text-nowrap">Since last month</span>
-                    </p>
-                </div>
-            </div>
-        </div> <!-- end col-->
-
-        <div class="col-xxl-3 col-sm-6">
-            <div class="card widget-flat text-bg-primary">
-                <div class="card-body">
-                    <div class="float-end">
-                        <i class="ri-group-2-line widget-icon"></i>
-                    </div>
-                    <h6 class="text-uppercase mt-0" title="Customers">Users</h6>
-                    <h2 class="my-2">63,154</h2>
-                    <p class="mb-0">
-                        <span class="badge bg-white bg-opacity-10 me-1">8.21%</span>
-                        <span class="text-nowrap">Since last month</span>
-                    </p>
-                </div>
-            </div>
-        </div> <!-- end col-->
+            <div class="adminButton" style="display: flex; align-items: center; justify-content: center; margin-top: 20px" id="understoodButton">UNDERSTOOD</div>
+        </div>
+    @endif
+    <div class="adminHomePageTitle">EFFECTIVE AND ACCESIBLE</div>
+    <div class="adminHomePageInformation">
+        <b class="textColorTitle">{{env('APP_NAME')}}</b>
+        stands as one of Ireland's premier providers of straightforward, efficient, and easily accessible training materials for occupational health and safety. Our primary focus lies in delivering exceptional customer service and ensuring regulatory compliance for our extensive clientele in Ireland and internationally. Through our user-friendly online learning platform, we facilitate seamless training experiences, whether for individuals or large groups of staff members.
     </div>
-
-    <div class="row">
-        <div class="col-lg-8">
-            <div class="card">
-                <div class="card-body">
-                    <div class="card-widgets">
-                        <a href="javascript:;" data-bs-toggle="reload"><i class="ri-refresh-line"></i></a>
-                        <a data-bs-toggle="collapse" href="#weeklysales-collapse" role="button" aria-expanded="false"
-                            aria-controls="weeklysales-collapse"><i class="ri-subtract-line"></i></a>
-                        <a href="#" data-bs-toggle="remove"><i class="ri-close-line"></i></a>
-                    </div>
-                    <h5 class="header-title mb-0">Weekly Sales Report</h5>
-
-                    <div id="weeklysales-collapse" class="collapse pt-3 show">
-                        <div dir="ltr">
-                            <div id="revenue-chart" class="apex-charts" data-colors="#3bc0c3,#1a2942,#d1d7d973"></div>
-                        </div>
-
-                        <div class="row text-center">
-                            <div class="col">
-                                <p class="text-muted mt-3">Current Week</p>
-                                <h3 class=" mb-0">
-                                    <span>$506.54</span>
-                                </h3>
-                            </div>
-                            <div class="col">
-                                <p class="text-muted mt-3">Previous Week</p>
-                                <h3 class=" mb-0">
-                                    <span>$305.25 </span>
-                                </h3>
-                            </div>
-                            <div class="col">
-                                <p class="text-muted mt-3">Conversation</p>
-                                <h3 class=" mb-0">
-                                    <span>3.27%</span>
-                                </h3>
-                            </div>
-                            <div class="col">
-                                <p class="text-muted mt-3">Customers</p>
-                                <h3 class=" mb-0">
-                                    <span>3k</span>
-                                </h3>
-                            </div>
-                        </div>
-                    </div>
-
-                </div> <!-- end card-body-->
-            </div> <!-- end card-->
-        </div> <!-- end col-->
-        <div class="col-lg-4">
-            <div class="card">
-                <div class="card-body">
-                    <div class="card-widgets">
-                        <a href="javascript:;" data-bs-toggle="reload"><i class="ri-refresh-line"></i></a>
-                        <a data-bs-toggle="collapse" href="#yearly-sales-collapse" role="button" aria-expanded="false"
-                            aria-controls="yearly-sales-collapse"><i class="ri-subtract-line"></i></a>
-                        <a href="#" data-bs-toggle="remove"><i class="ri-close-line"></i></a>
-                    </div>
-                    <h5 class="header-title mb-0">Yearly Sales Report</h5>
-
-                    <div id="yearly-sales-collapse" class="collapse pt-3 show">
-                        <div dir="ltr">
-                            <div id="yearly-sales-chart" class="apex-charts" data-colors="#3bc0c3,#1a2942,#d1d7d973">
-                            </div>
-                        </div>
-                        <div class="row text-center">
-                            <div class="col">
-                                <p class="text-muted mt-3 mb-2">Quarter 1</p>
-                                <h4 class="mb-0">$56.2k</h4>
-                            </div>
-                            <div class="col">
-                                <p class="text-muted mt-3 mb-2">Quarter 2</p>
-                                <h4 class="mb-0">$42.5k</h4>
-                            </div>
-                            <div class="col">
-                                <p class="text-muted mt-3 mb-2">All Time</p>
-                                <h4 class="mb-0">$102.03k</h4>
-                            </div>
-                        </div>
-                    </div>
-
-                </div> <!-- end card-body-->
-            </div> <!-- end card-->
-
-        </div> <!-- end col-->
-
+    @if($userPackageId)
+        <div class="notice">
+            <div class="noticeTitle">Notice:</div>
+            <div class="noticeText">
+                Please Notice : You have received the course / courses, either after your own purchase or from employer.
+                <br>
+                To be able to start training, you need to activate it first by pressing the following link and after that press on the Study button to get started.
+                <br><br>
+                Follow the link bellow
+                <br>
+            </div>
+            <a class="homeDownloadButton" href="{{route('package.index')}}">Link</a>
+        </div>
+    @endif
+    <div class="homeActionButtons">
+        @if($userPackageId)
+            <a href="{{route('course.index', $userPackageId[0]->id)}}" class="homeStartCourseButton">Start Course</a>
+        @else
+            <form action="{{route('basket.add')}}" method="POST">
+                @csrf
+                <input type="hidden" value="1" name="productId">
+                <button type="submit" class="homeStartCourseButton">Buy a course</button>
+            </form>
+        @endif
+        @if($certificateId)
+            <a href="{{route('certificate.download', $certificateId[0]->id)}}" class="homeDownloadButton">Downloand Certificate</a>
+        @endif
     </div>
-    <!-- end row -->
-
-    <div class="row">
-        <div class="col-xl-8">
-            <!-- Todo-->
-            <div class="card">
-                <div class="card-body p-0">
-                    <div class="p-3">
-                        <div class="card-widgets">
-                            <a href="javascript:;" data-bs-toggle="reload"><i class="ri-refresh-line"></i></a>
-                            <a data-bs-toggle="collapse" href="#yearly-sales-collapse" role="button"
-                                aria-expanded="false" aria-controls="yearly-sales-collapse"><i
-                                    class="ri-subtract-line"></i></a>
-                            <a href="#" data-bs-toggle="remove"><i class="ri-close-line"></i></a>
+    <div class="productSection">
+        <div class="productWrapper">
+            <div class="product-img" id="productDashImg">
+                <img src="{{asset("images/products/3.png")}}" id="overImgDash" alt="">
+                <img src="{{asset("images/products/productSmall.png")}}" height="420" width="327">
+            </div>
+            <div class="product-info">
+                <div class="product-text">
+                    <h1 style="color: #014a22">Manual Handling</h1>
+                    <h2>By {{env("app_name")}}</h2>
+                    <div class="product-info-icons">
+                        <div class="product-icons">
+                            <img src="images/icons/back-in-time.png" alt="">
+                            <div>Duration: 1-2 hours</div>
                         </div>
-                        <h5 class="header-title mb-0">Projects</h5>
-                    </div>
-
-                    <div id="yearly-sales-collapse" class="collapse show">
-
-                        <div class="table-responsive">
-                            <table class="table table-nowrap table-hover mb-0">
-                                <thead>
-                                    <tr>
-                                        <th>#</th>
-                                        <th>Project Name</th>
-                                        <th>Start Date</th>
-                                        <th>Due Date</th>
-                                        <th>Status</th>
-                                        <th>Assign</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Velonic Admin v1</td>
-                                        <td>01/01/2015</td>
-                                        <td>26/04/2015</td>
-                                        <td><span class="badge bg-info-subtle text-info">Released</span></td>
-                                        <td>Techzaa Studio</td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>Velonic Frontend v1</td>
-                                        <td>01/01/2015</td>
-                                        <td>26/04/2015</td>
-                                        <td><span class="badge bg-info-subtle text-info">Released</span></td>
-                                        <td>Techzaa Studio</td>
-                                    </tr>
-                                    <tr>
-                                        <td>3</td>
-                                        <td>Velonic Admin v1.1</td>
-                                        <td>01/05/2015</td>
-                                        <td>10/05/2015</td>
-                                        <td><span class="badge bg-pink-subtle text-pink">Pending</span></td>
-                                        <td>Techzaa Studio</td>
-                                    </tr>
-                                    <tr>
-                                        <td>4</td>
-                                        <td>Velonic Frontend v1.1</td>
-                                        <td>01/01/2015</td>
-                                        <td>31/05/2015</td>
-                                        <td><span class="badge bg-purple-subtle text-purple">Work in Progress</span></td>
-                                        <td>Techzaa Studio</td>
-                                    </tr>
-                                    <tr>
-                                        <td>5</td>
-                                        <td>Velonic Admin v1.3</td>
-                                        <td>01/01/2015</td>
-                                        <td>31/05/2015</td>
-                                        <td><span class="badge bg-warning-subtle text-warning">Coming soon</span></td>
-                                        <td>Techzaa Studio</td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>6</td>
-                                        <td>Velonic Admin v1.3</td>
-                                        <td>01/01/2015</td>
-                                        <td>31/05/2015</td>
-                                        <td><span class="badge bg-primary-subtle text-primary">Coming soon</span></td>
-                                        <td>Techzaa Studio</td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>7</td>
-                                        <td>Velonic Admin v1.3</td>
-                                        <td>01/01/2015</td>
-                                        <td>31/05/2015</td>
-                                        <td><span class="badge bg-danger-subtle text-danger">Cool</span></td>
-                                        <td>Techzaa Studio</td>
-                                    </tr>
-
-                                </tbody>
-                            </table>
+                        <div class="product-icons">
+                            <img src="images/icons/certificate.png" alt="">
+                            <div>Certificate Validity: 3 Years</div>
+                        </div>
+                        <div class="product-icons">
+                            <img src="images/icons/money.png" alt="">
+                            <div style="font-weight: bold; font-size: 20px; color: #014a22">Only 25€</div>
                         </div>
                     </div>
                 </div>
-            </div> <!-- end card-->
-        </div> <!-- end col-->
+                <div class="product-price-btn">
+                    <a href="{{route('front.product',1)}}"><button type="button" class="buttonInfo" style="background: white;   border: 1px solid var(--yellowColor);color: black;">info</button></a>
+                    <form action="{{route('basket.add')}}" method="POST">
+                        @csrf
+                        <input type="hidden" value="1" name="productId">
+                        <button type="submit">Add To Basket</button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
-    <!-- end row -->
+    <div class="langTitle">
+        <div class="languageText">When you start the course, you'll have the opportunity to choose from that 6 languages:</div>
+        <div class="languagesSection">
+            <img src="{{asset('images/flags/en.png')}}" alt="">
+            <img src="{{asset('images/flags/pl.png')}}" alt="">
+            <img src="{{asset('images/flags/ro.png')}}" alt="">
+            <img src="{{asset('images/flags/ru.png')}}" alt="">
+            <img src="{{asset('images/flags/sp.png')}}" alt="">
+            <img src="{{asset('images/flags/ukr.png')}}" alt="">
+        </div>
+    </div>
+</div>
+<script src="{{asset('js/showModalRegisterEmployee.js')}}"></script>
 @endsection
 
 @section('script')
