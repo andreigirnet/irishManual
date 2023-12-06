@@ -7,6 +7,8 @@ use App\Http\Requests\Auth\LoginRequest;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Stevebauman\Location\Facades\Location;
+
 
 class AuthenticatedSessionController extends Controller
 {
@@ -28,9 +30,13 @@ class AuthenticatedSessionController extends Controller
      */
     public function store(LoginRequest $request)
     {
-        
+
         $request->authenticate();
-        
+
+//        $ipAddress = $request->ip();
+//        $position = Location::get('193.33.93.43');
+//        dd($position->countryName);
+
         $request->session()->regenerate();
 
         return redirect()->intended(RouteServiceProvider::HOME);

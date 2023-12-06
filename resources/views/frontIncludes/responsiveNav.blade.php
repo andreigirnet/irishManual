@@ -6,5 +6,6 @@
         <div class="responsiveNavItem"><a href="{{route("front.team")}}">Team Training</a></div>
         <div class="responsiveNavItem"><a href="{{route("front.consulting")}}">Consulting</a></div>
         <div class="responsiveNavItem"><a href="{{route("front.contact")}}">Contact Us</a></div>
+        <div class="responsiveNavItem"><a href="{{route("front.blog")}}">Blog</a></div>
     </div>
 </div>

@@ -11,6 +11,7 @@
         <a href="{{route('front.team')}}"><div class="navItem">Team Training</div></a>
         <a href="{{route('front.consulting')}}"><div class="navItem">Consulting</div></a>
         <a href="{{route('front.contact')}}"><div class="navItem">Contact Us</div></a>
+        <a href="{{route('front.blog')}}"><div class="navItem">Blog</div></a>
     </div>
     <div id="loginMenu">
         <div id="googleIcon">
