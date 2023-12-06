@@ -21,6 +21,9 @@
     <link rel="stylesheet" href="{{asset("css/admin/share.css")}}">
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.3/dist/cdn.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <style>
+        [x-cloak] { display: none; }
+    </style>
 </head>
 
 <body>
@@ -55,7 +58,7 @@
     @include('layouts.shared/footer-scripts')
 
     @vite(['resources/js/layout.js', 'resources/js/main.js'])
-
+    <script src="js/hideAdminNav.js"></script>
 </body>
 
 </html>

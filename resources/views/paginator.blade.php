@@ -16,7 +16,7 @@
                     @if ($page == $paginator->currentPage())
                         <li class="active">{{ $page }}</li>
                     @else
-                        <li><a href="{{ $url }}">{{ $page }}</a></li>
+                            <a href="{{ $url }}"><li>{{ $page }}</li></a>
                     @endif
                 @endforeach
             @endif

@@ -2,7 +2,7 @@
 <div class="leftside-menu">
 
     <!-- Brand Logo Light -->
-    <a href="" class="logo logo-light">
+    <a href="/home" class="logo logo-light">
         <span class="logo-lg">
             <img src="/images/login/whiteLoginLogo.png" alt="logo" style="height: 50px">
         </span>
@@ -12,7 +12,7 @@
     </a>
 
     <!-- Brand Logo Dark -->
-    <a href="" class="logo logo-dark">
+    <a href="/home" class="logo logo-dark">
         <span class="logo-lg">
             <img src="/images/login/darkLoginLogo.png" alt="dark logo"style="height: 50px">
         </span>
@@ -30,56 +30,69 @@
 
             <li class="side-nav-item">
                 <a href="{{route('home')}}" class="side-nav-link">
-                    <i class="ri-dashboard-3-line"></i>
-                    <span class="badge bg-success float-end">9+</span>
-                    <span> Dashboard </span>
+                    <i class="ri-home-2-fill"></i>
+                    <span style="font-size: 18px"> Home </span>
+                </a>
+            </li>
+
+            <li class="side-nav-item">
+                <a href="{{route('admin.en.profile')}}" class="side-nav-link">
+                    <i class="ri-user-3-fill"></i>
+                    <span style="font-size: 18px"> Profile </span>
                 </a>
             </li>
 
             <li class="side-nav-item">
                 <a data-bs-toggle="collapse" href="#sidebarPages" aria-expanded="false" aria-controls="sidebarPages"
                     class="side-nav-link">
-                    <i class="ri-pages-line"></i>
-                    <span> Pages </span>
+                    <i class="ri-team-fill"></i>
+                    <span style="font-size: 18px"> For Employers </span>
                     <span class="menu-arrow"></span>
                 </a>
                 <div class="collapse" id="sidebarPages">
                     <ul class="side-nav-second-level">
                         <li>
-                            <a href="">Starter Page</a>
+                            <a href="{{route('dashboard.employer')}}">Your Dashboard</a>
                         </li>
                         <li>
-                            <a href="">Contact List</a>
+                            <a href="{{route('register.employee')}}">Register your employee</a>
                         </li>
                         <li>
-                            <a href="">Profile</a>
-                        </li>
-                        <li>
-                            <a href="">Timeline</a>
-                        </li>
-                        <li>
-                            <a href="">Invoice</a>
-                        </li>
-                        <li>
-                            <a href="">FAQ</a>
-                        </li>
-                        <li>
-                            <a href="">Pricing</a>
-                        </li>
-                        <li>
-                            <a href="">Maintenance</a>
-                        </li>
-                        <li>
-                            <a href="">Error 404</a>
-                        </li>
-                        <li>
-                            <a href="">Error 404-alt</a>
-                        </li>
-                        <li>
-                            <a href="">Error 500</a>
+                            <a href="{{route('admin.consulting')}}">Instructions</a>
                         </li>
                     </ul>
                 </div>
+            </li>
+
+            <li class="side-nav-item">
+                <a data-bs-toggle="collapse" href="#billing" aria-expanded="false" aria-controls="sidebarPages"
+                   class="side-nav-link">
+                    <i class="ri-money-euro-circle-fill"></i>
+                    <span style="font-size: 18px"> Billing </span>
+                    <span class="menu-arrow"></span>
+                </a>
+                <div class="collapse" id="billing">
+                    <ul class="side-nav-second-level">
+                        <li>
+                            <a href="{{route('basket.index')}}">Basket</a>
+                        </li>
+                        <li>
+                            <a href="{{route('order.index.user')}}">Orders</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="side-nav-item">
+                <a href="{{route('certificate.index')}}" class="side-nav-link">
+                    <i class="ri-file-paper-2-fill"></i>
+                    <span style="font-size: 18px"> Certificates </span>
+                </a>
+            </li>
+            <li class="side-nav-item">
+                <a href="{{route('package.index')}}" class="side-nav-link">
+                    <i class="ri-list-ordered"></i>
+                    <span style="font-size: 18px"> Packages </span>
+                </a>
             </li>
 
 {{--            <li class="side-nav-item">--}}
@@ -140,7 +153,7 @@
                     <a data-bs-toggle="collapse" href="#sidebarBaseUI" aria-expanded="false" aria-controls="sidebarBaseUI"
                         class="side-nav-link">
                         <i class="ri-briefcase-line"></i>
-                        <span> Admin Dashboard </span>
+                        <span style="font-size: 18px"> Admin Dashboard </span>
                         <span class="menu-arrow"></span>
                     </a>
                     <div class="collapse" id="sidebarBaseUI">
@@ -152,7 +165,13 @@
                                 <a href="{{route('orders.index')}}">Orders</a>
                             </li>
                             <li>
-                                <a href="">Accordions</a>
+                                <a href="{{route('packages.admin.index')}}">Packages</a>
+                            </li>
+                            <li>
+                                <a href="{{route('certificates.admin.index')}}">Certificates</a>
+                            </li>
+                            <li>
+                                <a href="{{route('admin.blogs.index')}}">Blogs</a>
                             </li>
                         </ul>
                     </div>
@@ -328,7 +347,7 @@
 
         </ul>
         <!--- End Sidemenu -->
-
+    <div style="position: absolute; bottom: 30px" id="stripeLogo"><img src="{{asset('images/brands/stripe.webp')}}" alt="" style="width: 235px"></div>
         <div class="clearfix"></div>
     </div>
 </div>

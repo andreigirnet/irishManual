@@ -14,17 +14,17 @@ class PackageController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index( Request $request)
     {
-        $packages = Package::latest()->where('user_id',auth()->user()->id)->simplePaginate(10);
-        return view('admin.administrator.package')->with('packages', $packages);
+        $packages = Package::latest()->where('user_id',auth()->user()->id)->paginate(10);
+        return view('pages.back.package')->with('packages', $packages);
     }
 
     public function share($id)
     {
         $employeesToShare = DB::select('SELECT * FROM users JOIN company_employee ON users.id = company_employee.employee WHERE company_employee.company=' . auth()->user()->id);
         $packageToShare   = DB::select("SELECT * FROM packages WHERE id=".$id);
-        return view('admin.administrator.share')->with('packageToShare',$packageToShare)->with('employeesToShare',$employeesToShare);
+        return view('pages.back.share')->with('packageToShare',$packageToShare)->with('employeesToShare',$employeesToShare);
     }
 
     public function sharePackage(Request $request, $id)
@@ -47,7 +47,7 @@ class PackageController extends Controller
             $page
         );
         $paginationData->setPath('/admin/packages');
-        return view('admin.admin.packages.index')->with('packages', $paginationData);
+        return view('pages.admin.packages.index')->with('packages', $paginationData);
     }
 
     public function searchPackage(Request $request){
@@ -55,7 +55,7 @@ class PackageController extends Controller
         if ($package === []){
             return redirect()->back()->with('success', 'No record has been found with this id');
         }
-        return view('admin.admin.packages.search')->with('package',$package[0]);
+        return view('pages.admin.packages.search')->with('package',$package[0]);
     }
 
     public function changeStatus(Request $request){
@@ -103,14 +103,14 @@ class PackageController extends Controller
     {
         $package= Package::find($id);
         $employees = DB::select("SELECT *, company_employee.id as relationId FROM users JOIN company_employee ON users.id = company_employee.employee WHERE company_employee.company=" . $package->user_id);
-        return view('admin.admin.packages.edit')->with('package', $package)->with('employees', $employees);
+        return view('pages.admin.packages.edit')->with('package', $package)->with('employees', $employees);
     }
 
     public function editOwner($id)
     {
         $package= Package::find($id);
         $employees = DB::select("SELECT *, company_employee.id as relationId FROM users JOIN company_employee ON users.id = company_employee.employee WHERE company_employee.company=" . $package->user_id);
-        return view('admin.admin.packages.editOwner')->with('package', $package)->with('employees', $employees);
+        return view('pages.admin.packages.editOwner')->with('package', $package)->with('employees', $employees);
     }
 
     /**
@@ -127,7 +127,7 @@ class PackageController extends Controller
             'course_name'=>$request->course_name,
             'status'     =>$request->status,
         ]);
-        return redirect()->back()->with('success','Package has been updated');
+        return  redirect()->back()->with('success','The package has been updated successfuly');
     }
 
     public function updateOwner(Request $request, $id)

@@ -24,8 +24,13 @@ class CertificateController extends Controller
      */
     public function index()
     {
-        $certificates = DB::select('SELECT *, certificates.created_at as valid_from, certificates.id as id FROM certificates JOIN packages ON certificates.package_id = packages.id WHERE certificates.user_id=' . auth()->user()->id . ' ORDER BY valid_from DESC');
-        return view('admin.administrator.certificate')->with('certificates', $certificates);
+        $certificates = DB::table('certificates')
+            ->select('*', 'certificates.created_at as valid_from', 'certificates.id as id')
+            ->join('packages', 'certificates.package_id', '=', 'packages.id')
+            ->where('certificates.user_id', auth()->user()->id)
+            ->orderByDesc('valid_from')
+            ->paginate(10);
+        return view('pages.back.certificate')->with('certificates', $certificates);
     }
 
     public function getAllCertificates(Request $request){
@@ -40,7 +45,7 @@ class CertificateController extends Controller
             $page
         );
         $paginationData->setPath('/admin/certificates');
-        return view('admin.admin.certificates.index')->with('certificates',$paginationData);
+        return view('pages.admin.certificates.index')->with('certificates',$paginationData);
     }
 
     public function searchCertificate(Request $request){
@@ -83,7 +88,7 @@ class CertificateController extends Controller
         $dompdf = new Dompdf($options);
         $dompdf->setPaper('letter', 'landscape');
         $certificate = DB::select("SELECT *, certificates.created_at as valid_from FROM certificates JOIN packages ON certificates.package_id = packages.id WHERE certificates.id =" . $certificateCreated->id);
-        $dompdf->loadHtml(view('admin.administrator.certificateAttach', compact('certificate', 'holder'))->render());
+        $dompdf->loadHtml(view('pages.back.certificateAttach', compact('certificate', 'holder'))->render());
         $dompdf->render();
         $output = $dompdf->output();
         $pdfFilePath = tempnam(sys_get_temp_dir(), 'pdf_');
@@ -112,7 +117,7 @@ class CertificateController extends Controller
 
         $data        = ['certificate' => $certificate, 'holder' => $holder];
 
-        $pdf         = Pdf::loadView('admin.administrator.generateCertificate', $data);
+        $pdf         = Pdf::loadView('pages.back.generateCertificate', $data);
 
         $pdf->setPaper('a4', 'landscape');
 

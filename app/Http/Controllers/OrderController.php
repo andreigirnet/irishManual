@@ -20,8 +20,8 @@ class OrderController extends Controller
      */
     public function index(): \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
     {
-        $orders = Order::latest()->where('user_id', auth()->user()->id)->simplePaginate(10);
-        return view('admin.administrator.orders')->with('orders',$orders);
+        $orders = Order::latest()->where('user_id', auth()->user()->id)->paginate(10);
+        return view('pages.back.orders')->with('orders',$orders);
     }
 
     public function allOrders(Request $request): \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
@@ -78,7 +78,7 @@ class OrderController extends Controller
     public function edit($id)
     {
         $order = Order::find($id);
-        return view('admin.admin.orders.edit')->with('order', $order);
+        return view('pages.admin.orders.edit')->with('order', $order);
     }
 
     /**
@@ -88,10 +88,6 @@ class OrderController extends Controller
     {
         $request->validate([
             'quantity' => 'required|max:50',
-            'address'  => 'required',
-            'county'   => 'required',
-            'city'     => 'required',
-            'country'  => 'required'
         ]);
         $order = Order::find($id);
         $order->update([

@@ -464,6 +464,7 @@ html[data-sidenav-size="compact"]:not([data-layout="topnav"]) {
         .leftside-menu {
             width: $leftbar-width-md;
             min-width: $leftbar-width-md;
+            position: relative;
 
             // Sidebar Menu
             .side-nav {

@@ -57,8 +57,8 @@
                                 <abbr title="Phone">P:</abbr> (123) 456-7890
                             </address>
                         </div> <!-- end col-->
-                    </div>    
-                    <!-- end row -->        
+                    </div>
+                    <!-- end row -->
 
                     <div class="row">
                         <div class="col-12">
@@ -141,7 +141,7 @@
                             <a href="javascript:window.print()" class="btn btn-primary"><i class="ri-printer-line"></i> Print</a>
                             <a href="javascript: void(0);" class="btn btn-info">Submit</a>
                         </div>
-                    </div>   
+                    </div>
                     <!-- end buttons -->
 
                 </div> <!-- end card-body-->

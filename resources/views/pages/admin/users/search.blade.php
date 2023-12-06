@@ -44,7 +44,7 @@
                                 </thead>
                                 <tbody>
                                 @foreach($users as $user)
-                                    <tr>
+                                    <tr style="color: black">
                                         <td style="display: flex; column-gap: 15px">
                                             <form action="{{route('user.delete', $user->id)}}" method="POST">
                                                 @csrf

@@ -88,7 +88,9 @@
 .navButtons{
     display: flex;
     width: 80%;
-    justify-content: space-between;
+    justify-content: center;
+    column-gap: 20px;
+    font-size: 18px;
 }
 .navButton{
     width: 100px;
@@ -157,14 +159,17 @@
     width: 20px;
 }
 .submitTestQuesstion{
+    width: 130px;
     padding: 10px;
     background: #f8a62e;
     border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: black;
     cursor: pointer;
+    font-weight: bold;
+    font-size: 18px;
 }
 .downCertificate{
     width: 150px;
@@ -206,7 +211,7 @@
     color: green;
 }
 #eyeIcon{
-    width: 32px;
+    width: 60px;
     position: absolute;
     bottom: 43px;
     left: 86px;
@@ -219,26 +224,40 @@
 #eyeIcon:hover{
     background: #fec512;
 }
+.confirmCourseButton{
+    width: 170px;
+    height: 45px;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    background: var(--yellowColor);
+    font-weight: 600;
+    color: var(--textTitle);
+    font-size: 20px;
+}
 .modalCourseComplete{
+    display: flex;
     width: 50%;
     height: auto;
     padding: 30px 50px;
     position: absolute;
     z-index: 1;
     background: white;
-    display: flex;
     align-items: center;
     flex-direction: column;
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    margin-top: 100px;
+    top: 47%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 .modalRegisterComplete{
     width: 50%;
-    height: 450px;
+    height: auto;
+    padding-bottom: 50px;
     position: absolute;
     top: 28px;
-    z-index: 1;
+    z-index: 3;
     background: white;
     display: flex;
     align-items: center;
@@ -428,18 +447,22 @@ input:checked + .slider:before {
         display: none;
     }
     .modalRegisterComplete{
-        width: 60%;
+        width: 85%;
         height: auto;
         padding: 20px 50px;
         position: absolute;
         top: 28px;
-        z-index: 1;
+        z-index: 4;
         background: white;
         display: flex;
         align-items: center;
         flex-direction: column;
         border-radius: 10px;
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+    .modalInnerText{
+        width: 100%;
+        font-size: 16px;
     }
     .modalTitle{
         text-align: center;

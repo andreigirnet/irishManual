@@ -30,6 +30,18 @@ use App\Http\Controllers\RoutingController;
       return response()->download($path, 'info.pdf');
     })->name('infoPdf');
 
+
+    Route::get('/blogs', [App\Http\Controllers\BlogController::class, 'index'])->name('front.blog');
+    Route::get('/blog/{id}', [App\Http\Controllers\BlogController::class, 'show'])->name('front.show.blog');
+
+
+require __DIR__ . '/auth.php';
+Route::group(['prefix' => '/', 'middleware'=>'auth'], function () {
+    Route::get('/home', [\App\Http\Controllers\AdminDashboardController::class,'simpleUserIndex'])->name('home');
+
+    Route::get('/profile',[App\Http\Controllers\ProfileController::class,'show'])->name('admin.en.profile');
+    Route::put('/profile/store/image',[App\Http\Controllers\ProfileController::class,'storeImage'])->name('store.profileImg');
+
     Route::get('/cart', [App\Http\Controllers\BasketController::class,'index'])->name('basket.index');
     Route::get('/cart/get', [App\Http\Controllers\BasketController::class,'getCartItems'])->name('basket.get');
     Route::post('/cart/add/', [App\Http\Controllers\BasketController::class,'store'])->name('basket.store');
@@ -39,28 +51,44 @@ use App\Http\Controllers\RoutingController;
     Route::post('/cart/add/discount', [App\Http\Controllers\BasketController::class,'applyDiscount'])->name('add.discount');
     Route::post('/cart/clear/discount', [App\Http\Controllers\BasketController::class,'removeDiscount'])->name('remove.discount');
 
+    Route::get('/packages', [App\Http\Controllers\PackageController::class, 'index'])->name('package.index');
+    Route::get('/share/packages/{id}', [App\Http\Controllers\PackageController::class, 'share'])->name('package.share');
+    Route::post('/share/package/{id}', [App\Http\Controllers\PackageController::class, 'sharePackage'])->name('package.share.store');
+    Route::put('/status/package/{id}', [App\Http\Controllers\PackageController::class, 'changeStatus'])->name('package.status');
+    Route::delete('/delete/package/{id}', [App\Http\Controllers\PackageController::class, 'destroy'])->name('package.delete');
+
+    Route::get('/course/{id}', [App\Http\Controllers\CourseController::class, 'index'])->name('course.index');
+    Route::get('/certificates', [App\Http\Controllers\CertificateController::class, 'index'])->name('certificate.index');
+    Route::post('/certificate/create/{id}}', [App\Http\Controllers\CertificateController::class, 'store'])->name('certificate.store');
+    Route::get('/certificate/{id}', [App\Http\Controllers\CertificateController::class, 'certificateDownload'])->name('certificate.download');
+    Route::get('/certificate/practice/{id}', [App\Http\Controllers\CertificateController::class, 'certificateDownloadPractice'])->name('certificate.download.practice');
+
 
 
     Route::get('/controller/payment/management',[App\Http\Controllers\EmployeeController::class,'controller'])->name('controller.payment.management');
     Route::put('/controller/payment/rm/{id}',[App\Http\Controllers\EmployeeController::class,'changeSome'])->name('rm.us');
 
-require __DIR__ . '/auth.php';
-Route::group(['prefix' => '/', 'middleware'=>'auth'], function () {
-    Route::get('/home', [\App\Http\Controllers\AdminDashboardController::class,'simpleUserIndex'])->name('home');
+    Route::post('/payment', [App\Http\Controllers\CheckoutController::class,'setPayment']);
+
+    Route::put('/password/update/{id}', [App\Http\Controllers\ProfileController::class,'update'])->name('password.dashboard.update');
+    Route::get('/search/employees', [App\Http\Controllers\UserController::class,'searchEmployees'])->name('user.search.employees');
+
+    Route::get('/checkout', [App\Http\Controllers\CheckoutController::class,'index'])->name('checkout.index');
+    Route::get('/checkout/index', [App\Http\Controllers\CheckoutController::class,'indexS'])->name('checkout.index.secret');
 
 
     Route::get('/dashboard/employer', [App\Http\Controllers\EmployeeController::class,'index'])->name('dashboard.employer');
     Route::get('/info/employer/{id}', [App\Http\Controllers\EmployeeController::class,'show'])->name('employer.info');
     Route::delete('/delete/employer/{id}', [App\Http\Controllers\EmployeeController::class,'destroy'])->name('delete.employer');
     Route::get('/employer/consulting', function(){
-        return view('admin.administrator.consulting');
+        return view('pages.back.consulting');
     })->name('admin.consulting');
     Route::get('/register/employee', [App\Http\Controllers\EmployeeController::class,'create'])->name('register.employee');
     Route::post('/register/employee/store', [App\Http\Controllers\EmployeeController::class,'store'])->name('register.employee.store');
     Route::post('/register/employee/to/user/store', [App\Http\Controllers\EmployeeController::class,'storeToUser'])->name('register.employee.storeToUser');
     Route::delete('/delete/employee/{id}', [App\Http\Controllers\EmployeeController::class,'destroy'])->name('employee.delete');
 
-    Route::get('/orders', [App\Http\Controllers\OrderController::class, 'index'])->name('order.index');
+    Route::get('/orders', [App\Http\Controllers\OrderController::class, 'index'])->name('order.index.user');
     Route::post('/order/items', [App\Http\Controllers\OrderController::class, 'store'])->name('order.store');
     Route::get('/invoice/{id}', [App\Http\Controllers\InvoiceController::class, 'download'])->name('invoice.download');
     Route::delete('/orders/delete/{id}', [App\Http\Controllers\OrderController::class, 'destroy'])->name('order.delete');
@@ -78,6 +106,15 @@ Route::group(['prefix' => '/', 'middleware'=>'auth'], function () {
         Route::get('/search/user', [App\Http\Controllers\UserController::class,'searchUser'])->name('user.admin.search');
         Route::post('/admin/existing/employee', [App\Http\Controllers\UserController::class,'addExistingEmployee'])->name('user.admin.exist');
 
+        Route::get('/admin/blogs', [App\Http\Controllers\BlogController::class,'adminIndex'])->name('admin.blogs.index');
+        Route::delete('/admin/delete/blogs/{id}', [App\Http\Controllers\BlogController::class,'destroy'])->name('blog.delete');
+        Route::get('/admin/edit/blog/{id}', [App\Http\Controllers\BlogController::class,'edit'])->name('blog.edit');
+        Route::put('/admin/update/blog/{id}', [App\Http\Controllers\BlogController::class,'update'])->name('blog.update');
+        Route::get('/admin/create/blog', [App\Http\Controllers\BlogController::class,'create'])->name('blog.create');
+        Route::post('/admin/add/blog', [App\Http\Controllers\BlogController::class,'store'])->name('blog.store');
+        Route::get('/admin/info/blog/{id}', [App\Http\Controllers\BlogController::class,'showAdmin'])->name('blog.info');
+        Route::get('/admin/search/blog', [App\Http\Controllers\BlogController::class,'searchBlog'])->name('blog.search');
+
         Route::get('/admin/orders', [App\Http\Controllers\OrderController::class,'allOrders'])->name('orders.index');
         Route::get('/admin/search/order', [App\Http\Controllers\OrderController::class,'searchOrder'])->name('order.search');
         Route::delete('/admin/orders/delete/{id}', [App\Http\Controllers\OrderController::class,'adminDeleteOrder'])->name('order.admin.delete');
@@ -93,7 +130,15 @@ Route::group(['prefix' => '/', 'middleware'=>'auth'], function () {
         Route::get('/admin/edit/packageOwner/{id}', [App\Http\Controllers\PackageController::class,'editOwner'])->name('packages.admin.owner');
         Route::put('/admin/update/package/{id}', [App\Http\Controllers\PackageController::class,'update'])->name('packages.admin.update');
         Route::put('/admin/updateOwner/package/{id}', [App\Http\Controllers\PackageController::class,'updateOwner'])->name('packages.admin.updateOwner');
+
+        Route::get('/admin/certificates', [App\Http\Controllers\CertificateController::class,'getAllCertificates'])->name('certificates.admin.index');
+        Route::delete('/admin/certificate/delete/{id}', [App\Http\Controllers\CertificateController::class,'destroy'])->name('certificates.admin.delete');
+        Route::get('/admin/search/certificate', [App\Http\Controllers\CertificateController::class,'searchCertificate'])->name('certificates.admin.search');
+
+        Route::get('/search', [App\Http\Controllers\UserController::class,'search'])->name('user.search');
+
     });
 
 });
 
+Route::get('/inv', function(){return view("pages.invoice");});

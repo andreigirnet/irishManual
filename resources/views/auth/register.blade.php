@@ -57,6 +57,11 @@
                                                     placeholder="Enter your password">
                                             </div>
                                             <div class="mb-3">
+                                                <label for="password" class="form-label">ConfirmPassword</label>
+                                                <input id="password-confirm" placeholder="Password Confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+
+                                            </div>
+                                            <div class="mb-3">
                                                 <div class="form-check">
                                                     <input type="checkbox" class="form-check-input"
                                                         id="checkbox-signup">

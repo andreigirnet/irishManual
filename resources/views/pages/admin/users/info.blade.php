@@ -148,7 +148,7 @@
             <div class="shareMesage" x-text="message" x-show="showMessage"></div>
             <button class="adminButton" type="submit" x-show="showSubmitButton">Add</button>
         </form>
-        <form action="{{route('register.employee.storeToUser')}}" method="POST" id="adminRegisterEmployee" class="registerEmployeeForm hide">
+        <form action="{{route('register.employee.store')}}" method="POST" id="adminRegisterEmployee" class="registerEmployeeForm hide">
             @csrf
             <input type="hidden" name="companyId" value="{{$user->id}}">
             <label for="userNameEmployee" class="formLabel">Employee Full Name</label>

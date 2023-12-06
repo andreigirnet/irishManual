@@ -59,7 +59,7 @@ class ProfileController extends Controller
     public function show(): \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
     {
         $user = User::find(Auth::user());
-        return view('admin.administrator.profile')->with('user',$user);
+        return view('pages.back.profile')->with('user',$user);
     }
 
     /**

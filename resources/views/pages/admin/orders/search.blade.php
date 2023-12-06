@@ -49,7 +49,7 @@
                                 </thead>
                                 <tbody>
                                 @if($order)
-                                        <tr>
+                                        <tr style="color: black">
                                             <td class="actionRow">
                                                 <form action="{{route('order.admin.delete', $order->id)}}" method="POST">
                                                     @csrf

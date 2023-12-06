@@ -12,6 +12,8 @@
 }
 .checkoutLeftSide{
     width: 40%;
+    display: flex;
+    align-items: center;
 }
 .checkoutRightSide{
     width: 40%;

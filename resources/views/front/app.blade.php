@@ -23,6 +23,28 @@
     <link rel="stylesheet" href="{{asset("css/front/contact.css")}}">
     <link rel="stylesheet" href="{{asset("css/front/consulting.css")}}">
     <link rel="stylesheet" href="{{asset("css/front/login.css")}}">
+    <link media="all" rel="stylesheet" href="../../../../public/blog/css/fonts/icomoon/icomoon.css">
+    <link media="all" rel="stylesheet" href="../../../../public/blog/css/fonts/roxine-font-icon/roxine-font.css">
+    <link media="all" rel="stylesheet" href="../../../../public/blog/vendors/font-awesome/css/font-awesome.css">
+    <!-- Vendors -->
+    {{--    <link media="all" rel="stylesheet" href="../../../../public/blog/vendors/owl-carousel/dist/assets/owl.carousel.min.css">--}}
+    {{--    <link media="all" rel="stylesheet" href="../../../../public/blog/vendors/owl-carousel/dist/assets/owl.theme.default.min.css">--}}
+    {{--    <link media="all" rel="stylesheet" href="../../../../public/blog/vendors/animate/animate.css">--}}
+    {{--    <link media="all" rel="stylesheet" href="../../../../public/blog/vendors/rateyo/jquery.rateyo.css">--}}
+    {{--    <link media="all" rel="stylesheet" href="../../../../public/blog/vendors/bootstrap-datepicker/css/bootstrap-datepicker.css">--}}
+    {{--    <link media="all" rel="stylesheet" href="../../../../public/blog/vendors/fancyBox/source/jquery.fancybox.css">--}}
+    {{--    <link media="all" rel="stylesheet" href="../../../../public/blog/vendors/fancyBox/source/helpers/jquery.fancybox-thumbs.css">--}}
+    <!-- Bootstrap 4 -->
+    <link media="all" rel="stylesheet" href="{{asset('/blog/css/bootstrap.css')}}">
+    <!-- Rev Slider -->
+    <link rel="stylesheet" type="text/css" href="../../../../public/blog/vendors/rev-slider/revolution/css/settings.css">
+    <link rel="stylesheet" type="text/css" href="../../../../public/blog/vendors/rev-slider/revolution/css/layers.css">
+    <link rel="stylesheet" type="text/css" href="../../../../public/blog/vendors/rev-slider/revolution/css/navigation.css">
+    <!-- Theme CSS -->
+    <link media="all" rel="stylesheet" href="{{asset('/blog/css/main.css')}}">
+    <!-- Custom CSS -->
+    <link media="all" rel="stylesheet" href="{{asset('/blog/css/custom.css')}}">
+
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="//unpkg.com/alpinejs" defer></script>
@@ -46,6 +68,7 @@ var x=document.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);
 <script src="{{asset("js/brandSwiper.js")}}"></script>
 <script src="{{asset("js/accordion.js")}}"></script>
 <script src="{{asset("js/review.js")}}"></script>
+
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script>
     AOS.init();

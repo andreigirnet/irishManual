@@ -6,22 +6,22 @@
     @if (session('created'))
         <div class="modalRegisterComplete" id="modalRegisterEmployer">
             <div class="modalTitle">Hi there</div>
-            <p>Its <a href="{{route('home')}}">irish-safetytraining.com</a> Training Centre here.</p>
+            <p>Its <a href="{{route('home')}}">Irish-ManualHandling.com</a> Training Centre here.</p>
             <div class="modalText">
-                <div>
-                    If you need any additional information or help pls feel free to contact us anytime through the chat on our website.
+                <div class="modalInnerText">
+                    If you require any further assistance or information, please don't hesitate to reach out to us via the chat feature on our website.
                     <br><br>
-                    You can take the course by following the steps from our website if you are logged in or come back later anytime through your email that was sent to you right now from our system using your login details ( password & email).Check your spam/junk mail just in case.
+                    To access the course, you can follow the steps outlined on our website once you're logged in, or return at any time later by using the email we've just sent you containing your login details (password & email). Do check your spam/junk folder, just in case.
                     <br><br>
-                    You can choose the language you need for taking your training after the payment it’s processed successfully (English/Polish/Spanish/Russian/Romanian)
+                    Upon successful processing of your payment, you'll be able to choose the language for your training (English / Polish / Spanish / Russian / Romanian / Ukrainian).
                     <br><br>
-                    We are assisting our customers from 10am till 7-8pm every single day including weekends.
+                    Our customer support is available from 10 am to 7-8 pm every day, including weekends.
                 </div>
             </div>
             <div class="modalText">
-                Kind regards
+                Best regards
             </div>
-            <div class="adminButton" style="display: flex; align-items: center; justify-content: center; margin-top: 20px" id="understoodButton">UNDERSTOOD</div>
+            <div class="adminButtonModal" style="display: flex; align-items: center; justify-content: center; margin-top: 20px" id="understoodButton">UNDERSTOOD</div>
         </div>
     @endif
     <div class="adminHomePageTitle">EFFECTIVE AND ACCESIBLE</div>
@@ -33,9 +33,9 @@
         <div class="notice">
             <div class="noticeTitle">Notice:</div>
             <div class="noticeText">
-                Please Notice : You have received the course / courses, either after your own purchase or from employer.
+                You have received the course/courses, either through your own purchase or from your employer.
                 <br>
-                To be able to start training, you need to activate it first by pressing the following link and after that press on the Study button to get started.
+                To commence the training, please activate it by clicking the link below and then proceed by pressing the "Study" button to get started.
                 <br><br>
                 Follow the link bellow
                 <br>
@@ -60,25 +60,27 @@
     <div class="productSection">
         <div class="productWrapper">
             <div class="product-img" id="productDashImg">
-                <img src="{{asset("images/products/3.png")}}" id="overImgDash" alt="">
                 <img src="{{asset("images/products/productSmall.png")}}" height="420" width="327">
             </div>
             <div class="product-info">
                 <div class="product-text">
                     <h1 style="color: #014a22">Manual Handling</h1>
-                    <h2>By {{env("app_name")}}</h2>
+                    <img src="{{asset("images/products/saleOver.png")}}" id="overImgDash" alt="">
                     <div class="product-info-icons">
                         <div class="product-icons">
                             <img src="images/icons/back-in-time.png" alt="">
-                            <div>Duration: 1-2 hours</div>
+                            <div style="font-size: 18px">Duration: 1-2 hours</div>
                         </div>
                         <div class="product-icons">
                             <img src="images/icons/certificate.png" alt="">
-                            <div>Certificate Validity: 3 Years</div>
+                            <div style="font-size: 18px">Certificate Validity: 3 Years</div>
                         </div>
                         <div class="product-icons">
                             <img src="images/icons/money.png" alt="">
-                            <div style="font-weight: bold; font-size: 20px; color: #014a22">Only 25€</div>
+                            <div class="price">
+                                <span class="before-price">$35</span>
+                                <span class="after-price">$25</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -87,7 +89,7 @@
                     <form action="{{route('basket.add')}}" method="POST">
                         @csrf
                         <input type="hidden" value="1" name="productId">
-                        <button type="submit">Add To Basket</button>
+                        <button type="submit" class="sale-button" style="color: #414141">SHOP NOW</button>
                     </form>
                 </div>
             </div>

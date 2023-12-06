@@ -4,17 +4,18 @@
     transition: 1s;
 }
 .qtyContainer{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 80px;
+    /*display: flex;*/
+    /*justify-content: space-between;*/
+    /*align-items: center;*/
+    width: 260px;
 }
 .qtyInput{
     border: none;
     outline: none;
-    width: 15px;
+    width: 20px;
     font-size: 16px;
     font-weight: 700;
+    background: #eaf1f3;
 }
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
@@ -31,7 +32,7 @@ input[type=number] {
     transform: scale(1.1);
 }
 td{
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 700;
 }
 th{
@@ -40,6 +41,13 @@ th{
 }
 .deleteIcon{
     border: none;
+    width: 30px;
+    height: 30px;
+}
+.deleteIcon img{
+    border: none;
+    width: 30px;
+    height: 30px;
 }
 .goToCheckOutContainer{
     width: 100%;

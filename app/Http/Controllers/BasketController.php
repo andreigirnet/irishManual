@@ -26,7 +26,7 @@ class BasketController extends Controller
         $cartItems    = $this->cart->getDetails();
         $cartTotal    = $this->cart->getTotal();
         $cartSubTotal = $this->cart->getItemsSubtotal();
-        return view('admin.administrator.cart');
+        return view('pages.back.cart');
     }
 
     public function getCartItems(): string
@@ -47,8 +47,8 @@ class BasketController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
-        $product = DB::select("SELECT * FROM products WHERE id=".$request->productId);
 
+        $product = DB::select("SELECT * FROM products WHERE id=".$request->productId);
         $this->cart->addItem([
             'id'      =>$request->productId,
             'title'   =>$product[0]->name,

@@ -23,7 +23,7 @@ class EmployeeController extends Controller
     public function index(): \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
     {
         $employees = DB::select('SELECT *, users.id as id,(SELECT id from certificates WHERE user_id=users.id ORDER BY created_at DESC LIMIT 1) as certificate_id, (SELECT count(*) from packages WHERE user_id=users.id AND status = "purchased") as assigned, company_employee.id as relationId, company_employee.created_at as created_at FROM users JOIN company_employee ON users.id = company_employee.employee WHERE company_employee.company=' . auth()->user()->id . " ORDER BY company_employee.created_at DESC");
-        return view('admin.administrator.dashboard')->with('employees', $employees);
+        return view('pages.back.dashboard')->with('employees', $employees);
     }
 
     /**
@@ -31,7 +31,7 @@ class EmployeeController extends Controller
      */
     public function create(): \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
     {
-        return view('admin.administrator.registerEmployee');
+        return view('pages.back.registerEmployee');
     }
 
     /**

@@ -32,7 +32,7 @@ class CheckoutController extends Controller
     {
         Stripe::setApiKey(env('STRIPE_SECRET'));
         $cartDetails = $this->cart->getDetails();
-        return view("admin.administrator.checkout")->with('cartDetails',$cartDetails);
+        return view("pages.back.checkout")->with('cartDetails',$cartDetails);
     }
 
     public function indexS(): \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
@@ -79,6 +79,7 @@ class CheckoutController extends Controller
                     'statement_descriptor' => 'irish-safetytraining',
                     'customer'=> $customer->id,
                     'description' => 'Payment made by '. auth()->user()->email,
+                    'return_url' => url('/packages')
                 ]);
             }
             if (isset($json_obj->payment_intent_id)) {

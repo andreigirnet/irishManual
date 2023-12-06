@@ -108,6 +108,7 @@ return [
     | localized telephone numbers, street address information and more.
     |
     */
+    'telephone' => '894631967',
 
     'faker_locale' => 'en_US',
 

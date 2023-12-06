@@ -9,6 +9,7 @@ use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 
 class RegisteredUserController extends Controller
 {
@@ -45,11 +46,11 @@ class RegisteredUserController extends Controller
             'unHashedPassword' => $request->password,
             'phone' => $request->phone
         ]);
-    
+
         event(new Registered($user));
 
         Auth::login($user);
-
+        Session::flash('created', 'created');
         return redirect(RouteServiceProvider::HOME);
     }
 }

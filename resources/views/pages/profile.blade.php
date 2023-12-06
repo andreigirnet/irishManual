@@ -50,15 +50,18 @@
                             <li class="nav-item"><a class="nav-link" data-bs-toggle="tab"
                                     data-bs-target="#user-activities" type="button" role="tab"
                                     aria-controls="home" aria-selected="true"
-                                    href="#user-activities">Activities</a></li>
+                                    href="#user-activities">Activities</a>
+                            </li>
                             <li class="nav-item"><a class="nav-link" data-bs-toggle="tab"
                                     data-bs-target="#edit-profile" type="button" role="tab"
                                     aria-controls="home" aria-selected="true"
-                                    href="#edit-profile">Settings</a></li>
+                                    href="#edit-profile">Settings</a>
+                            </li>
                             <li class="nav-item"><a class="nav-link" data-bs-toggle="tab"
                                     data-bs-target="#projects" type="button" role="tab"
                                     aria-controls="home" aria-selected="true"
-                                    href="#projects">Projects</a></li>
+                                    href="#projects">Projects</a>
+                            </li>
                         </ul>
 
                         <div class="tab-content m-0 p-4">

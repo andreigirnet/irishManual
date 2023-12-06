@@ -11,22 +11,33 @@
     --greenColor: #70bc40;
     font-family: 'PT Sans Narrow', sans-serif;
 }
-.logo img{
-    width: 125px;
-}
+/*.logo img{*/
+/*    width: 125px;*/
+/*}*/
 a{
     text-decoration: none;
 }
 .adminButton{
-    width: 100px;
-    height: 40px;
+    width: 130px;
+    height: 45px;
     border: none;
     border-radius: 7px;
     cursor: pointer;
     background: var(--yellowColor);
     font-weight: 600;
     color: var(--textTitle);
-    font-size: 16px;
+    font-size: 20px;
+}
+.adminButtonModal{
+    width: 160px;
+    height: 45px;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    background: var(--yellowColor);
+    font-weight: 600;
+    color: var(--textTitle);
+    font-size: 20px;
 }
 .logoutButton:hover{
     font-size: 15px;
@@ -358,7 +369,23 @@ a{
     text-decoration: none;
     color: black;
 }
-
+.uploadFormImage{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 10px;
+}
+.inputFile{
+    width: 192px;
+}
+.userProfileInfo{
+    font-size: 20px;
+}
+#hideText{
+    font-size: 13px;
+    display: flex;
+}
 @media screen and (max-width: 1200px) and (min-width: 768px){
    .side{
        display: none;
@@ -380,6 +407,12 @@ a{
     }
     .errorPhoto a img{
         width: 80%;
+    }
+    #stripeLogo{
+        display: none;
+    }
+    #hideText{
+        display: none;
     }
 }
 @media screen and (max-width: 767px) and (min-width: 250px){
@@ -403,5 +436,11 @@ a{
     }
     .hamButtonAdmin{
         display: flex;
+    }
+    #stripeLogo{
+        display: none;
+    }
+    #hideText{
+        display: none;
     }
 }

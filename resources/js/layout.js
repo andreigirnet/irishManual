@@ -159,8 +159,10 @@ class ThemeCustomizer {
                 } else {
                     if (size === 'condensed') {
                         self.changeLeftbarSize(configSize == 'condensed' ? 'default' : configSize, false);
+
                     } else {
                         self.changeLeftbarSize('condensed', false);
+
                     }
                 }
 
