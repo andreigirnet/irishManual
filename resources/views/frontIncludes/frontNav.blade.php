@@ -1,5 +1,5 @@
 <div id="frontNav">
-    <a href="{{route('frontHome')}}">
+    <a href="{{route('frontHome')}}" class="logoMainLink">
         <div id="mainLogo">
             <img src="{{asset("images/logo/logomain.png")}}" alt="">
         </div>
@@ -15,8 +15,10 @@
     </div>
     <div id="loginMenu">
         <div id="googleIcon">
+            <img src="{{asset("images/logo/cpdMember.png")}}" alt="" id="cpd">
+            <img src="{{asset("images/logo/rospa.png")}}" alt="" id="rospa">
             <a href=""><img src="{{asset("images/logo/google-icon.webp")}}" alt=""></a>
         </div>
-        <a href="/login"><div class="navItem">Login</div></a>
+        <a href="/login"><div class="navItem" id="attentionItem">Login</div></a>
     </div>
 </div>

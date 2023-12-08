@@ -1,14 +1,14 @@
 @extends('front.app')
 @section('content')
     <div id="mainBanner">
+        <video autoplay muted loop class="warehouse" >
+            <source src="video/bannerVideoBig.mp4" type="video/mp4">
+        </video>
         <div class="opacityLayer"></div>
         <div class="mainBannerContent">
-            <video autoplay muted loop class="warehouse">
-                <source src="video/warehouse.mp4" type="video/mp4">
-            </video>
             <div class="mainBannerRight">
-                <h1 class="mainBannerTitle">CONVENIENT & EFFECTIVE,<br> SO YOU CAN GET BACK TO WORK</h1>
-                <div class="mainBannerDescription">Providing top-quality safety training, certification management and consultative services that simplify the task of ensuring every worker returns home safely.</div>
+                <h1 class="mainBannerTitle">Convenient & Effective,<br> Ensuring Your Safe Return to Work</h1>
+                <div class="mainBannerDescription">Providing best Online Manual Handling Training Course that delivers top-quality safety instruction, certification management, and consultative services, simplifying the task of ensuring every worker returns home safely.</div>
                 <a href="{{route('register')}}"><div class="pulse-button">Pay / Register Here</div></a>
             </div>
         </div>
@@ -32,37 +32,43 @@
     </div>
 
     <div class="title" data-aos="fade-up">
-        <div class="titleText">Industry Leading Online Courses For Irish Workers</div>
+        <div class="titleText">Awarded for Exceptional Performance in Online Learning in Ireland and Europe</div>
         <div class="borderTitle"></div>
     </div>
     <div class="productSection">
         <div class="productWrapper">
-            <div class="product-img">
+            <div class="product-img" id="productDashImg">
                 <img src="{{asset("images/products/productSmall.png")}}" height="420" width="327">
             </div>
             <div class="product-info">
                 <div class="product-text">
-                    <h1 style="color: #014a22">Manual Handling</h1>
-                    <h2>By {{env("app_name")}}</h2>
+                    <h1 style="color: #014a22; font-size: 45px">Manual Handling</h1>
+                    <img src="{{asset("images/products/saleOver.png")}}" id="overImgDash" alt="">
                     <div class="product-info-icons">
                         <div class="product-icons">
                             <img src="images/icons/back-in-time.png" alt="">
-                            <div>Duration: 2-3 hours</div>
+                            <div style="font-size: 21px">Duration: 1-2 hours</div>
                         </div>
                         <div class="product-icons">
                             <img src="images/icons/certificate.png" alt="">
-                            <div>Certificate Validity: 3 Years</div>
+                            <div style="font-size: 21px">Certificate Validity: 3 Years</div>
                         </div>
                         <div class="product-icons">
                             <img src="images/icons/money.png" alt="">
-                            <div style="font-weight: bold; font-size: 20px; color: #014a22">Only 25€</div>
+                            <div class="price">
+                                <span class="before-price">€ 35</span>
+                                <span class="after-price">€ 25</span>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="product-price-btn">
-                    <a href=""><button type="button" class="buttonInfo" style="background: white;   border: 1px solid var(--yellowColor);color: black;">info</button></a>
-                    <a href=""><button type="button">buy now</button>
-                    </a>
+                    <a href="{{route('front.product',1)}}"><button type="button" class="buttonInfo" style="background: white;   border: 1px solid var(--yellowColor);color: black;">info</button></a>
+                    <form action="{{route('basket.add')}}" method="POST">
+                        @csrf
+                        <input type="hidden" value="1" name="productId">
+                        <button type="submit" class="sale-button" style="color: #414141">SHOP NOW</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -77,6 +83,97 @@
             <img src="{{asset('images/flags/ru.png')}}" alt="">
             <img src="{{asset('images/flags/sp.png')}}" alt="">
             <img src="{{asset('images/flags/ukr.png')}}" alt="">
+        </div>
+    </div>
+
+    <div class="bulkContainer">
+        <div class="innerBulk">
+            <div class="bulkLeftSide">
+                <div class="bulkTitle">Our online courses are designed for easy completion.</div>
+                <div class="bulkLine"></div>
+                <div class="bulkItems">
+                    <div class="bulkItem">
+                        <div class="bulkImg">
+                            <img src="{{asset('images/subnav/star.png')}}" alt="image">
+                        </div>
+                        <div class="bulkContent">- Buy your course online.</div>
+                    </div>
+                    <div class="bulkItem">
+                        <div class="bulkImg">
+                            <img src="{{asset('images/subnav/star.png')}}" alt="image">
+                        </div>
+                        <div class="bulkContent">- Get started by activating your course and beginning your training.</div>
+                    </div>
+                    <div class="bulkItem">
+                        <div class="bulkImg">
+                            <img src="{{asset('images/subnav/star.png')}}" alt="image">
+                        </div>
+                        <div class="bulkContent">- Advance & Complete - Engage with the course, take the exam, and then download your certificate of completion.</div>
+                    </div>
+                    <div class="bulkItem">
+                        <div class="bulkImg">
+                            <img src="{{asset('images/subnav/star.png')}}" alt="image">
+                        </div>
+                        <div class="bulkContent">- For any help or guidance, just email us at info@Irish-ManualHandling.com.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="bulkRightSide">
+                <img src="{{asset('images/landingBulk.png')}}" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div class="cpdContainer">
+        <div class="cpdInner">
+            <div class="paddingCpd">
+                <h2 class="cpdTitle">Complete this CPD and ROSPA Accredited Course to obtain your Official Certificate!</h2>
+                <div class="cpdFlex">
+                    <div class="cpdLeft">
+                        <div class="cpdItems">
+                            <div class="cpdItem">
+                                <div class="cpdImg">
+                                    <img src="{{asset('images/star.png')}}" alt="">
+                                </div>
+                                <div class="cpdContent">
+                                    <div class="cpdItemTitle">Complete this CPD and ROSPA </div>
+                                    <div class="cpdItemContent">Accredited Course to obtain your Official Certificate!</div>
+                                </div>
+                            </div>
+                            <div class="cpdItem">
+                                <div class="cpdImg">
+                                    <img src="{{asset('images/star.png')}}" alt="">
+                                </div>
+                                <div class="cpdContent">
+                                    <div class="cpdItemTitle">Certify Your Skills</div>
+                                    <div class="cpdItemContent">An Irish Manual Handling Diploma/Certificate, accredited by CPD and ROSPA, validates the skills you have acquired.</div>
+                                </div>
+                            </div>
+                            <div class="cpdItem">
+                                <div class="cpdImg">
+                                    <img src="{{asset('images/star.png')}}" alt="">
+                                </div>
+                                <div class="cpdContent">
+                                    <div class="cpdItemTitle">Stand Out From the Crowd</div>
+                                    <div class="cpdItemContent">Include your Irish Manual Handling Certification on your resume to outshine competitors.</div>
+                                </div>
+                            </div>
+                            <div class="cpdItem">
+                                <div class="cpdImg">
+                                    <img src="{{asset('images/star.png')}}" alt="">
+                                </div>
+                                <div class="cpdContent">
+                                    <div class="cpdItemTitle">Advance in Your Career</div>
+                                    <div class="cpdItemContent">Showcase your Irish Manual Handling Certification to prospective employers, highlighting your skills and capabilities.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cpdRight">
+                        <img src="{{asset('images/certExample.png')}}" alt="">
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 

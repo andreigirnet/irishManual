@@ -1,12 +1,49 @@
 *{
     margin: 0;
     padding: 0;
-    --primary: #003049;
+    --primary: #333333;
     --hoverColor: #f77500;
-    --yellowColor: #1d4e89;
+    --yellowColor: #31304d;
     --textTitle: #414141;
     --mainWidth: 1178px;
     font-family: 'PT Sans Narrow', sans-serif;
+}
+#swiperSubNav {
+    display: none;
+}
+.subNavImg{
+    width: 30px;
+}
+.subNavElement{
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    font-weight: 600;
+}
+.subNavContainer{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 45px;
+    align-items: center;
+}
+#cpd{
+
+}
+.subInnerNav{
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+    align-items: center;
+}
+.subNavMobile{
+    display: none;
+}
+.swiper-wrapper{
+    align-items: center;
+}
+.swiper {
+    height: 45px;
 }
 a{
     text-decoration: none;
@@ -56,13 +93,16 @@ a{
 }
 #frontNav{
     background: var(--primary);
-    padding: 0 40px 0 20px;
+    padding: 0 0px 0 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 #mainLogo img{
-    width: 158px;
+    width: 156px;
+}
+.logoMainLink{
+    padding: 5px 0px;
 }
 
 #navMenu{
@@ -75,6 +115,7 @@ a{
     padding: 15px;
     cursor: pointer;
 }
+
 a .navItem{
     font-size: 18px;
     font-weight: bold;
@@ -230,5 +271,17 @@ a .navItem{
     }
     #mainLogo img{
         width: 126px;
+    }
+    .subNavContainer{
+        display: none;
+    }
+    .subNavMobile{
+        display: none;
+    }
+    #swiperSubNav {
+         display: flex;
+    }
+    #cpd, #rospa{
+        display: none;
     }
 }

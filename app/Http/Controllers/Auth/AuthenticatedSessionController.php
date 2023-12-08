@@ -4,9 +4,12 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\LoginRequest;
+use App\Models\Ip;
+use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Stevebauman\Location\Facades\Location;
 
 
@@ -30,12 +33,20 @@ class AuthenticatedSessionController extends Controller
      */
     public function store(LoginRequest $request)
     {
-
         $request->authenticate();
 
 //        $ipAddress = $request->ip();
-//        $position = Location::get('193.33.93.43');
-//        dd($position->countryName);
+//        $position = Location::get($ipAddress)->countryName;
+//
+//        $ips = Ip::where('user_id', auth()->user()->id)->pluck('ip');
+//
+//        if (!$ips->contains($ipAddress)){
+//            $ip = new Ip;
+//            $ip->user_id = auth()->user()->id;
+//            $ip->ip = $ipAddress;
+//            $ip->country = $position;
+//            $ip->save();
+//        }
 
         $request->session()->regenerate();
 

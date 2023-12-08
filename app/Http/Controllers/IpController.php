@@ -13,7 +13,7 @@ class IpController extends Controller
      */
     public function index()
     {
-        //
+
     }
 
     /**
