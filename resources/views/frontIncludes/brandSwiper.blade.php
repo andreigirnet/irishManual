@@ -1,5 +1,5 @@
 <!-- Slider main container -->
-<div class="brandTitle">OUR VALUED CLIENTS</div>
+<div class="brandTitle" x-text="data.footer[8]">OUR VALUED CLIENTS</div>
 <div class="swiperBrand">
     <!-- Additional required wrapper -->
     <div id="swiper-button-prev"><img class="navArrow" src="{{asset("images/arrows/back.png")}}" alt=""></div>
@@ -30,11 +30,8 @@
 
     <div id="swiper-button-next"><img class="navArrow" src="{{asset("images/arrows/right.png")}}" alt=""></div>
 </div>
-{{--<div class="webman">--}}
-{{--    <p style="color: white;">--}}
-{{--        Copyright © 2023--}}
-{{--        <a href="https://irish-safetytraining.com/" target="_blank" style="color: #448a26; text-decoration: none;">Irish-safetytraining.com</a>--}}
-{{--        | Crafted with ❤️ by--}}
-{{--        <a href="https://webman.md/en/elaborare-site-uri-in-chisinau-si-moldova-3/" target="_blank" style="color: #448a26; text-decoration: none;">WEBMAN.md</a>--}}
-{{--    </p>--}}
-{{--</div>--}}
+<div class="webman">
+    <p style="color: white; font-size: 18px">
+        Copyright © 2016-2024 Irish-ManualHandling.com | Safety Ireland Ltd | Email: info@irish-manualhandling.com
+    </p>
+</div>

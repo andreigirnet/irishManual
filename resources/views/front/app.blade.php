@@ -29,7 +29,7 @@
     <script src="//unpkg.com/alpinejs" defer></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 </head>
-<body>
+<body x-data="app()">
 @include("frontIncludes/hamburger")
 @include("frontIncludes/responsiveNav")
 @include("frontIncludes/frontNav")
@@ -53,6 +53,7 @@ var x=document.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="{{asset("js/swiper.js")}}"></script>
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script src="{{asset('js/mainScript.js')}}"></script>
 <script>
     AOS.init();
 </script>

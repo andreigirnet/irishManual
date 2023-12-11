@@ -236,6 +236,14 @@
                     }).catch(error => {
                         console.error(error);
                     });
+                }else if(this.language === 'ukranian')
+                {
+                    axios.get('../data/course.json').then(response => {
+                        this.courses = response.data.ukranian
+                        console.log(this.courses)
+                    }).catch(error => {
+                        console.error(error);
+                    });
                 }else
                 {
                     axios.get('../data/course.json').then(response => {
@@ -277,7 +285,7 @@
                 <div class="langItem" @click="setLanguage('romanian')"><img src="{{asset('/images/flags/ro.png')}}" alt=""></div>
                 <div class="langItem" @click="setLanguage('russian')"><img src="{{asset('/images/flags/ru.png')}}" alt=""></div>
                 <div class="langItem" @click="setLanguage('spanish')"><img src="{{asset('/images/flags/sp.png')}}" alt=""></div>
-                <div class="langItem" @click="setLanguage('spanish')"><img src="{{asset('/images/flags/ukr.png')}}" alt=""></div>
+                <div class="langItem" @click="setLanguage('ukranian')"><img src="{{asset('/images/flags/ukr.png')}}" alt=""></div>
 {{--                <div>|</div>--}}
 {{--                <div class="langText" id="hideNav">Hide nav bar</div>--}}
 {{--                <label class="switch" id="showHideNav">--}}

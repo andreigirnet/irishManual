@@ -8,6 +8,36 @@
     --mainWidth: 1178px;
     font-family: 'PT Sans Narrow', sans-serif;
 }
+
+.language-picker {
+    position: fixed;
+    top: 79px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    z-index: 10;
+}
+
+.language-picker label {
+    margin-right: 10px;
+}
+
+.language-picker select {
+    padding: 7px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: #333333;
+    color: white;
+}
+
+/* Style for flag icons (adjust the width and height as needed) */
+.flag-icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+}
 #swiperSubNav {
     display: none;
 }

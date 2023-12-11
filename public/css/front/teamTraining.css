@@ -60,6 +60,9 @@
 }
 .trainingLeftDescription{
     width: 60%;
+    row-gap: 20px;
+    display: flex;
+    flex-direction: column;
 }
 .trainingRightIcon img{
     width: 300px;
@@ -72,9 +75,12 @@
 }
 .trainingRightDescription{
     width: 60%;
+    row-gap: 20px;
+    display: flex;
+    flex-direction: column;
 }
 .trainingTitle{
-    font-size: 22px;
+    font-size: 40px;
     font-weight: bold;
 }
 .trainingLeftSide{

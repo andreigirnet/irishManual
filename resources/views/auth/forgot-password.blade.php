@@ -8,7 +8,20 @@
 </head>
 
 <body class="authentication-bg">
-
+@if (session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
     <div class="account-pages pt-2 pt-sm-5 pb-4 pb-sm-5 position-relative">
         <div class="container">
             <div class="row justify-content-center">
@@ -16,29 +29,30 @@
                     <div class="card overflow-hidden">
                         <div class="row g-0">
                             <div class="col-lg-6 d-none d-lg-block p-2">
-                                <img src="/images/auth-img.jpg" alt="" class="img-fluid rounded h-100">
+                                <img src="/images/login/registerLogin.jpg" alt="" class="img-fluid rounded h-100">
                             </div>
                             <div class="col-lg-6">
                                 <div class="d-flex flex-column h-100">
                                     <div class="auth-brand p-4">
                                         <a href="" class="logo-light">
-                                            <img src="/images/logo.png" alt="logo" height="22">
+                                            <img src="/images/login/whiteLoginLogo.png" alt="logo" height="22">
                                         </a>
                                         <a href="" class="logo-dark">
-                                            <img src="/images/logo-dark.png" alt="dark logo" height="22">
+                                            <img src="/images/login/darkLoginLogo.png" alt="dark logo" height="22">
                                         </a>
                                     </div>
-                                    <div class="p-4 my-auto">
+                                    <div class="p-4">
                                         <h4 class="fs-20">Forgot Password?</h4>
                                         <p class="text-muted mb-3">Enter your email address and we'll send you an email
                                             with instructions to reset your password.</p>
 
 
                                         <!-- form -->
-                                        <form action="#">
+                                        <form action="{{ route('password.email') }}" method="POST">
+                                            @csrf
                                             <div class="mb-3">
                                                 <label for="emailaddress" class="form-label">Email address</label>
-                                                <input class="form-control" type="email" id="emailaddress" required="" placeholder="Enter your email">
+                                                <input class="form-control" name="email" type="email" id="emailaddress" required="" placeholder="Enter your email">
                                             </div>
 
                                             <div class="mb-0 text-start">
@@ -65,13 +79,6 @@
     </div>
     <!-- end page -->
 
-    <footer class="footer footer-alt fw-medium">
-        <span class="text-dark-emphasis">
-            <script>
-                document.write(new Date().getFullYear())
-            </script> © Velonic - Theme by Techzaa
-        </span>
-    </footer>
 
     @include('layouts.shared/footer-scripts')
 

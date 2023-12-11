@@ -30,16 +30,13 @@
     font-size: 16px;
 }
 #customerReviewsMob{
-    display: none;
     width: 100%;
     justify-content: center;
 }
 .customerReviewsMobWrap{
     width: 80%;
 }
-#customersReviews{
 
-}
 .opacityLayer{
     position: absolute;
     width: 100%;
@@ -95,8 +92,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 300px;
+    width: auto;
     height: 60px;
+    padding: 10px 30px;
     font-size: 1.3em;
     text-transform: uppercase;
     text-align: center;
@@ -182,6 +180,9 @@
     color: white;
     opacity: 0.9;
 }
+.after-price{
+    font-size: 36px;
+}
 .title{
     margin-top: 60px;
     width: 100%;
@@ -223,7 +224,7 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    margin-top: 50px;
+    margin-top: 100px;
 }
 .bulkLine{
     width: 100%;
@@ -275,6 +276,8 @@
 
 .bulkRightSide{
     width: 45%;
+    display: flex;
+    align-items: center;
 }
 .innerBulk{
     width: 1178px;
@@ -297,7 +300,7 @@
 
 .product-info {
     height: 420px;
-    width: 350px;
+    width: 418px;
     border-radius: 0 7px 10px 7px;
     background-color: #ffffff;
     display: flex;
@@ -308,7 +311,7 @@
 
 .product-text {
     height: 300px;
-    width: 327px;
+    width: 363px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -430,6 +433,7 @@
     text-decoration: line-through;
     color: #999;
     margin-right: 5px;
+    font-size: 28px;
 }
 
 .after-price {
@@ -530,12 +534,15 @@
 .reviewText{
     margin: 20px 0;
     opacity: 0.8;
+    font-size: 20px;
 }
 .reviewGoogle img{
     width: 100px;
 }
 .main-review{
-    width: 300px;
+    width: 400px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding: 20px;
 }
 .aboutUs{
     width: 100%;
@@ -633,7 +640,7 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    margin-top: 50px;
+    margin-top: 100px;
 }
 .cpdInner{
     width: 1178px;
@@ -653,7 +660,7 @@
 .cpdItems{
     display: flex;
     flex-direction: column;
-    row-gap: 20px;
+    row-gap: 35px;
 }
 .cpdItem{
     display: flex;
@@ -670,13 +677,13 @@
     justify-content: center;
 }
 .cpdLeft{
-    width: 65%;
+    width: 45%;
 }
 .cpdRight{
-    width: 40%;
+    width: 50%;
 }
 .cpdRight img{
-    width: 80%;
+    width: 100%;
 }
 .cpdContent{
     width: 85%;
@@ -689,9 +696,37 @@
     margin-top: 30px;
     display: flex;
 }
+.trustContainer{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-top: 100px;
+}
+.innerTrust{
+    width: 1178px;
+    display: flex;
+    column-gap: 80px;
+}
+.trustLeft{
+    width: 50%;
+}
+.trustLeft img{
+    width: 100%;
+}
+.trustRight{
+    width: 42%;
+}
+.trustTitle{
+    font-size: 45px;
+    font-weight: 600;
+}
+.trustContent{
+    font-size: 22px;
+    margin-top: 20px;
+}
 @media only screen and (max-width: 1200px) {
     #customersReviews{
-        display: none;
+
     }
     #customerReviewsMob{
         display: flex;
@@ -704,6 +739,7 @@
         width: 300px;
         grid-template-columns: auto;
         grid-column-gap: 0px;
+        row-gap: 20px;
         justify-content: center;
     }
     .courseWrapper{
@@ -825,23 +861,26 @@
         width: 200px;
     }
     .webman p{
+        display: flex;
+        align-items: center;
+        text-align: center;
         flex-direction: column;
         row-gap: 5px;
-        letter-spacing: 2px;
+        font-size: 16px;
     }
     .webman{
         height: 260px;
     }
     #overImgDash{
         right: 84px;
-        width: 133px;
+        width: 187px;
         height: 56px;
     }
     .languagesSection{
-        column-gap: 14px;
+        column-gap: 12px;
     }
     .innerBulk{
-        width: 300px;
+        width: 95%;
         flex-direction: column;
         row-gap: 40px;
     }
@@ -852,7 +891,7 @@
         width: 100%;
     }
     .cpdInner{
-        width: 300px;
+        width: 95%;
     }
     .cpdFlex{
         flex-direction: column-reverse;
@@ -866,6 +905,50 @@
         width: 100%;
         display: flex;
         justify-content: center;
+    }
+    .titleText{
+        text-align: center;
+    }
+    .bulkTitle{
+        text-align: center;
+    }
+    .bulkContainer{
+        margin-top: 50px;
+    }
+    .cpdContainer{
+        margin-top: 50px;
+    }
+    .cpdRight img {
+        width: 100%;
+    }
+    .cpdTitle{
+        text-align: center;
+    }
+    .trustContainer{
+        margin-top: 50px;
+    }
+    .innerTrust{
+        width: 85%;
+        flex-direction: column-reverse;
+        row-gap: 20px;
+    }
+    .trustLeft{
+        width: 100%;
+    }
+    .trustRight{
+        width: 100%;
+    }
+    .trustTitle{
+        text-align: center;
+    }
+    .languageText{
+        padding: 0px 5px;
+    }
+    .main-review{
+        width: 300px;
+    }
+    .sizeTextMobile{
+        font-size: 34px;
     }
 }
 

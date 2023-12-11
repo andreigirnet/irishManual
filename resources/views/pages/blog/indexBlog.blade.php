@@ -24,4 +24,7 @@
             @endforeach
         </div>
     </div>
+    <div style="margin-top: 70px">
+    {{ $blogs->links('paginator') }}
+    </div>
 @endsection
