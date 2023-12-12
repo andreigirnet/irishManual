@@ -86,7 +86,7 @@
                                                 <div class="d-flex gap-2 justify-content-center mt-3">
                                                     <a href="javascript: void(0);" class="btn btn-soft-primary"><i
                                                             class="ri-facebook-circle-fill"></i></a>
-                                                    <a href="javascript: void(0);" class="btn btn-soft-danger"><i
+                                                    <a href="{{route('google')}}" class="btn btn-soft-danger"><i
                                                             class="ri-google-fill"></i></a>
                                                     <a href="javascript: void(0);" class="btn btn-soft-info"><i
                                                             class="ri-twitter-fill"></i></a>

@@ -143,3 +143,8 @@ Route::group(['prefix' => '/', 'middleware'=>'auth'], function () {
 });
 
 Route::get('/inv', function(){return view("pages.invoice");});
+
+use App\Http\Controllers\SocialiteController;
+
+Route::get('/login/google', [SocialiteController::class, 'redirectToGoogle'])->name('google');
+Route::get('/login/google/callback', [SocialiteController::class, 'handleGoogleCallback']);
