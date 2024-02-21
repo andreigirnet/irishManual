@@ -41,6 +41,12 @@
                     <span style="font-size: 18px"> Profile </span>
                 </a>
             </li>
+              <li class="side-nav-item">
+                <a href="{{route('package.index')}}" class="side-nav-link">
+                    <i class="ri-list-ordered"></i>
+                    <span style="font-size: 18px"> My Courses </span>
+                </a>
+            </li>
 
             <li class="side-nav-item">
                 <a data-bs-toggle="collapse" href="#sidebarPages" aria-expanded="false" aria-controls="sidebarPages"
@@ -88,12 +94,7 @@
                     <span style="font-size: 18px"> Certificates </span>
                 </a>
             </li>
-            <li class="side-nav-item">
-                <a href="{{route('package.index')}}" class="side-nav-link">
-                    <i class="ri-list-ordered"></i>
-                    <span style="font-size: 18px"> Packages </span>
-                </a>
-            </li>
+          
 
 {{--            <li class="side-nav-item">--}}
 {{--                <a data-bs-toggle="collapse" href="#sidebarPagesAuth" aria-expanded="false"--}}
@@ -158,6 +159,9 @@
                     </a>
                     <div class="collapse" id="sidebarBaseUI">
                         <ul class="side-nav-second-level">
+                            <li>
+                                <a href="{{route('admin.dashboard')}}">Dashboard Metrics</a>
+                            </li>
                             <li>
                                 <a href="{{route('users.index')}}">Users</a>
                             </li>

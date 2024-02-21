@@ -57,8 +57,8 @@
         <img src="images/certificate/certificate.jpg" id="image" style="width: 100%" alt="">
         <div id="holder">{{$holder->name}}</div>
         <div id="id">{{$certificate[0]->unique_id}}</div>
-        <div id="valid">{{$certificate[0]->valid_from}}</div>
-        <div id="expiration">{{$certificate[0]->expiration_date}}</div>
+        <div id="valid">{{ \Carbon\Carbon::parse($certificate[0]->valid_from)->format('Y-m-d') }}</div>
+        <div id="expiration">{{ \Carbon\Carbon::parse($certificate[0]->expiration_date)->format('Y-m-d') }}</div>
     </div>
 </div>
 </body>

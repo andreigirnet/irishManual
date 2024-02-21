@@ -93,7 +93,7 @@
     font-size: 18px;
 }
 .navButton{
-    width: 100px;
+    width: 126px;
     height: 50px;
     display: flex;
     align-items: center;
@@ -103,9 +103,10 @@
     border: 1px solid gray;
     border-radius: 10px;
     cursor: pointer;
+    background: #fce001;
 }
 .navButton:hover{
-    background: #fce001;
+    background: #fec512;
 }
 .slideTitle{
     font-size: 30px;
@@ -185,7 +186,7 @@
     background: var(--navAdminColor);
 }
 .tryAgainButton{
-    width: 150px;
+    width: 173px;
     height: 50px;
     display: flex;
     align-items: center;
@@ -371,6 +372,10 @@ input:checked + .slider:before {
 @media screen and (max-width: 1200px) and (min-width: 569px){
     .modalCourseComplete{
         margin-top: 0px;
+        transform: none;
+        top: 0;
+        left: 0;
+        width: 100%;
     }
     .courseContainer{
         width: 95%;
@@ -469,6 +474,12 @@ input:checked + .slider:before {
     }
     .modalText{
         text-align: center;
+        width: 100%;
+    }
+    .modalCourseComplete{
+        transform: none;
+        top: 0;
+        left: 0;
         width: 100%;
     }
 }

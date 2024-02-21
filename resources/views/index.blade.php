@@ -69,17 +69,17 @@
                     <div class="product-info-icons">
                         <div class="product-icons">
                             <img src="images/icons/back-in-time.png" alt="">
-                            <div style="font-size: 18px">Duration: 1-2 hours</div>
+                            <div style="font-size: 21px" ><span style="font-weight: bold;">Duration:</span> 45 Minutes</span></div>
                         </div>
                         <div class="product-icons">
                             <img src="images/icons/certificate.png" alt="">
-                            <div style="font-size: 18px">Certificate Validity: 3 Years</div>
+                            <div style="font-size: 21px" ><span style="font-weight: bold;">Certificate Validity:</span> 3 Years</div>
                         </div>
                         <div class="product-icons">
                             <img src="images/icons/money.png" alt="">
                             <div class="price">
-                                <span class="before-price">$35</span>
-                                <span class="after-price">$25</span>
+                                <span class="before-price">€39</span>
+                                <span class="after-price">€25</span>
                             </div>
                         </div>
                     </div>

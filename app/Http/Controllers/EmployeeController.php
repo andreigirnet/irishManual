@@ -48,9 +48,9 @@ class EmployeeController extends Controller
             ]);
             $password = 'User' . rand(10, 9999);
             Mail::to($request->email)->send(new RegisterEmployeeMail($request->email, $password));
-            $hashPassword = Hash::make($password, [
-                'rounds' => 12,
-            ]);
+            $hashPassword = Hash::make($password);
+
+            
             $user = User::create([
                 'name'     => $request->name,
                 'email'    => $request->email,
@@ -59,7 +59,6 @@ class EmployeeController extends Controller
                 'unHashedPassword'=>$password,
                 'registeredBy'=>auth()->user()->email
             ]);
-
             CompanyEmployee::create([
                 'company'  => auth()->user()->id,
                 'employee' => $user->id
@@ -85,9 +84,8 @@ class EmployeeController extends Controller
             ]);
             $password = 'User' . rand(10, 9999);
             Mail::to($request->email)->send(new RegisterEmployeeMail($request->email, $password));
-            $hashPassword = Hash::make($password, [
-                'rounds' => 12,
-            ]);
+            $hashPassword = Hash::make($password);
+
             $user = User::create([
                 'name'     => $request->name,
                 'email'    => $request->email,

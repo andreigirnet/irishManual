@@ -102,7 +102,11 @@
                         <img class="qtyIcon" id="addQty" @click="addQty(cartItem.hash)"  src="{{asset('images/icons/plus.png')}}" alt="">
                     </td>
                     <td>
-                        <button class="deleteIcon" @click="deleteItem(cartItem.hash)"><img class="qtyIcon" src="{{asset('images/icons/bin.png')}}" alt=""></button>
+                        <form action="{{route('basket.delete')}}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button class="deleteIcon" type="submit"><img class="qtyIcon" src="{{asset('images/icons/bin.png')}}" alt=""></button>
+                        </form>
                     </td>
                 </tr>
             </template>

@@ -7,9 +7,9 @@
         <div class="opacityLayer"></div>
         <div class="mainBannerContent">
             <div class="mainBannerRight">
-                <h1 class="mainBannerTitle" x-text="data.videoTitle">Convenient & Effective,<br> Ensuring Your Safe Return to Work</h1>
+                <h1 class="mainBannerTitle" x-html="data.videoTitle">Convenient & Effective,<br> Ensuring Your Safe Return to Work</h1>
                 <div class="mainBannerDescription" x-text="data.videoContent">Providing best Online Manual Handling Training Course that delivers top-quality safety instruction, certification management, and consultative services, simplifying the task of ensuring every worker returns home safely.</div>
-                <a href="{{route('register')}}"><div class="pulse-button" x-text="data.registerButton">Pay / Register Here</div></a>
+                <a href="{{route('register')}}"><div class="videoButton" x-text="data.registerButton">Pay / Register Here</div></a>
             </div>
         </div>
     </div>
@@ -32,13 +32,13 @@
     </div>
 
     <div class="title" data-aos="fade-up">
-        <div class="titleText" x-text="data.landingProduct[0]">Awarded for Exceptional Performance in Online Learning in Ireland and Europe</div>
+        <div class="titleText" x-text="data.landingProduct[0]">Awarded for Exceptional Performance in Online Learning in Ireland, UK and Europe</div>
         <div class="borderTitle"></div>
     </div>
     <div class="productSection">
         <div class="productWrapper">
             <div class="product-img" id="productDashImg">
-                <img src="{{asset("images/products/productSmall.png")}}" height="420" width="327">
+                <img src="{{asset("images/products/productSmall.png")}}">
             </div>
             <div class="product-info">
                 <div class="product-text">
@@ -47,16 +47,16 @@
                     <div class="product-info-icons">
                         <div class="product-icons">
                             <img src="images/icons/back-in-time.png" alt="">
-                            <div style="font-size: 21px"  x-text="data.landingProduct[1]">Duration: 1-2 hours</div>
+                            <div style="font-size: 21px" ><span style="font-weight: bold;">Duration:</span> 45 Minutes</span></div>
                         </div>
                         <div class="product-icons">
                             <img src="images/icons/certificate.png" alt="">
-                            <div style="font-size: 21px"  x-text="data.landingProduct[2]">Certificate Validity: 3 Years</div>
+                            <div style="font-size: 21px" ><span style="font-weight: bold;">Certificate Validity:</span> 3 Years</div>
                         </div>
                         <div class="product-icons">
                             <img src="images/icons/money.png" alt="">
                             <div class="price">
-                                <span class="before-price">€ 35</span>
+                                <span class="before-price">€ 39</span>
                                 <span class="after-price">€ 25</span>
                             </div>
                         </div>
@@ -133,7 +133,7 @@
                 <div class="trustTitle" x-text="data.trustSection[0]">Training you can trust</div>
                 <div class="trustContent">
                     <div x-text="data.trustSection[1]">All of our courses comply with Continuing Professional Development standards and are accredited by the CPD Certification Service.
-                    We go above and beyond by ensuring that our courses receive independent approval from reputable authorities such as RoSPA, IATP, IIRSM, and the Institute of Hospitality.</div>
+                        We go above and beyond by ensuring that our courses receive independent approval from reputable authorities such as RoSPA, IATP, IIRSM, and the Institute of Hospitality.</div>
                     <br><br>
                     <div x-text="data.trustSection[2]">The Manual Handling course is endorsed by Skills for Care, the foremost organization in workforce development for social care across Ireland, the UK, and all European countries. This respected accreditation is exclusive to top-quality learning and development providers in the social care sector.</div>
                 </div>
@@ -199,16 +199,16 @@
         <div class="borderTitle"></div>
     </div>
 
-{{--    <div id="customersReviews">--}}
-{{--        <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>--}}
-{{--        <div class="elfsight-app-452ee68c-8e4c-4329-bf9d-d5f4175f5d0e"></div>--}}
-{{--    </div>--}}
-{{--    <div id="customerReviewsMob">--}}
-{{--        <div class="customerReviewsMobWrap">--}}
-{{--            <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>--}}
-{{--            <div class="elfsight-app-6a3ccd9b-896b-4195-946e-7cba27a27218"></div>--}}
-{{--        </div>--}}
-{{--    </div>--}}
+    {{--    <div id="customersReviews">--}}
+    {{--        <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>--}}
+    {{--        <div class="elfsight-app-452ee68c-8e4c-4329-bf9d-d5f4175f5d0e"></div>--}}
+    {{--    </div>--}}
+    {{--    <div id="customerReviewsMob">--}}
+    {{--        <div class="customerReviewsMobWrap">--}}
+    {{--            <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>--}}
+    {{--            <div class="elfsight-app-6a3ccd9b-896b-4195-946e-7cba27a27218"></div>--}}
+    {{--        </div>--}}
+    {{--    </div>--}}
 
     <div id="customersReviews">
         <div id="customerReviewWrap">
@@ -415,7 +415,7 @@
                 <br>
                 <p x-text="data.homeAboutUs[3]">Our certifications hold recognition across Ireland, the UK, and the EU, ensuring credibility and compliance. Our instructors, esteemed members of CMIOSH (Chartered Member of IOSH), are IOSH certified at NFQ Level 6. Renowned for reliability, quality, and convenience, our services stand as a testament to our dedication.</p>
                 <hr>
-                <p x-text="data.homeAboutUs[4]">For inquiries, student support, sales, or technical assistance, reach us at 0894631967. Alternatively, utilize our chat-based support system or contact us via email at info@irish-manualhandling.com. Elevate your safety training with us today!</p>
+                <p x-text="data.homeAboutUs[4]">For inquiries, student support, sales, or technical assistance, utilize our chat-based support system or contact us via email at info@irish-manualhandling.com. Elevate your safety training with us today!</p>
             </div>
         </div>
     </div>
@@ -509,7 +509,7 @@
         </div>
     </div>
 
-    <div class="title" data-aos="fade-up" style="margin-top: 200px">
+    <div class="title spaceTop" data-aos="fade-up" >
         <div class="titleText sizeTextMobile" x-text="data.expert[0]">Expert Online Manual Handling Training | Irish-ManualHandling.com</div>
         <div class="borderTitle"></div>
     </div>
@@ -517,7 +517,7 @@
     <div class="aboutUs" data-aos="fade-up">
         <div class="aboutWrapper">
             <div>
-                <p x-text="data.expert[1]">Discover top-notch Online Manual Handling Training at Irish-ManualHandling.com. Elevate workplace safety with our comprehensive courses. Contact us at 0894631967 or info@irish-manualhandling.com.</p>
+                <p x-text="data.expert[1]">Discover top-notch Online Manual Handling Training at Irish-ManualHandling.com. Elevate workplace safety with our comprehensive courses. Contact us at info@irish-manualhandling.com.</p>
                 <br>
                 <p x-text="data.expert[2]">Are you looking to enhance workplace safety and compliance? Look no further than Irish-ManualHandling.com! Our premier platform offers unparalleled Online Manual Handling Training designed to equip your team with the skills and knowledge necessary to ensure a secure and efficient work environment.</p>
 
@@ -526,14 +526,14 @@
                 <p x-text="data.expert[4]">Why Choose Irish-ManualHandling.com?</p>
 
                 <p x-text="data.expert[5]">
-                Curriculum: Our courses encompass the latest industry standards and best practices, ensuring your team is well-versed in safe manual handling procedures.
-                Interactive Learning: Engaging modules with interactive elements make learning enjoyable and effective for all participants.
-                Certification: Upon successful completion, receive accredited certification, showcasing compliance with safety regulations.
-                Convenient Online Access: Accessible 24/7, our platform allows flexibility for your team to learn at their own pace and convenience.
-                Contact Us Today!
+                    Curriculum: Our courses encompass the latest industry standards and best practices, ensuring your team is well-versed in safe manual handling procedures.
+                    Interactive Learning: Engaging modules with interactive elements make learning enjoyable and effective for all participants.
+                    Certification: Upon successful completion, receive accredited certification, showcasing compliance with safety regulations.
+                    Convenient Online Access: Accessible 24/7, our platform allows flexibility for your team to learn at their own pace and convenience.
+                    Contact Us Today!
                 </p>
                 <br>
-                <p x-text="data.expert[6]">Elevate your workplace safety standards with our Online Manual Handling Training. Reach out to us at 0894631967 or drop us an email at info@irish-manualhandling.com to discuss your training needs. Join countless satisfied clients who have entrusted us to revolutionize their approach to manual handling safety.</p>
+                <p x-text="data.expert[6]">Elevate your workplace safety standards with our Online Manual Handling Training. Drop us an email at info@irish-manualhandling.com to discuss your training needs. Join countless satisfied clients who have entrusted us to revolutionize their approach to manual handling safety.</p>
 
                 <p x-text="data.expert[7]">Ensure your team's safety and efficiency—choose Irish-ManualHandling.com for comprehensive Online Manual Handling Training today!</p>
             </div>

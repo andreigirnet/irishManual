@@ -3,7 +3,7 @@
 @section('content')
     @include('layouts.shared/page-title', ['sub_title' => 'Menu', 'page_title' => 'Dashboard'])
     <div class="dashWrapper">
-        <div class="adminHomePageTitle">Packages</div>
+        <div class="adminHomePageTitle">My Courses</div>
         @if(count($packages))
             <table class="styled-table">
                 <thead>
@@ -49,7 +49,8 @@
                 {{ $packages->links('paginator') }}
             </div>
         @else
-            <div class="textAdmin">No Packages at the moment</div>
+            <div class="textAdmin">No Courses at the moment</div>
+            <a href="/home" class="sale-button" >Buy a course here</a>
         @endif
     </div>
     <script src="{{asset('js/adminPage.js')}}"></script>

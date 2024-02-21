@@ -1,13 +1,13 @@
 <x-mail::message>
-# Here are your login details:
+# Your employer has registered you on the best platform for an Online Manual Handling Course 🎉 Here are your credentials:
 
 Login: {{$email}} <br>
 Password: {{$password}}
 
-<x-mail::button :url="'https://irish-safetytraining.com/login'">
+<x-mail::button :url="'https://www.irish-manualhandling.com/login'">
 Login Here
 </x-mail::button>
 
-Thanks,<br>
+Best regards,<br>
 {{ config('app.name') }}
 </x-mail::message>

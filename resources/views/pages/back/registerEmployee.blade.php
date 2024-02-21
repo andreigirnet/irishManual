@@ -7,15 +7,15 @@
             <div class="modalRegisterComplete" id="modalRegisterEmployer">
                 <div class="modalTitle">You have registered successfully your employee.</div>
                 <div class="modalText">
-                    <p>Please inform that the login details were emailed to him/her that can be used anytime later to access our website and take the course.
+                    <p>We have emailed your login details, allowing you to access our website and take the course at your convenience.
                         <br><br>
-                        It's important to check the spam and junk mail just in case. If you wish to send the course to your employee please press the link below (<a
-                            href="https://irish-safetytraining.com/packages">https://irish-safetytraining.com/packages</a>).
+                        Please check your spam or junk mail folder, just in case. If you'd like to send the course to your employee, please click the link below.
+                        (<a href="https://irish-manualhandling.com/packages">https://irish-manualhandling.com/packages</a>).
                         <br><br>
-                        You must have the course/courses purchased to be able to take this step, otherwise go to the home page and pay for the course / amount of courses you need and after that send it to your employees.
+                        To proceed, ensure you have purchased the course(s). If not, visit the homepage, make the necessary purchase, and then proceed to send it to your employees.
                     </p>
                 </div>
-                <div class="adminButton" style="display: flex; align-items: center; justify-content: center; margin-top: 20px" id="understoodButton">UNDERSTOOD</div>
+                <div class="adminButton" style="display: flex; align-items: center; justify-content: center; margin-top: 20px; width: auto; padding: 20px" id="understoodButton">UNDERSTOOD</div>
             </div>
         @endif
         <div class="leftRegisterEmployee">

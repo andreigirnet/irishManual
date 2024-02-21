@@ -14,6 +14,8 @@
                 <input type="file" name="fileInput">
                 <label class="formLabel" for="editName">Blog Title</label>
                 <input class="formInputProfile" type="text" id="editName" name="title" value="{{$blog->title}}">
+                <label class="formLabel" for="editName">Blog Slug</label>
+                <input class="formInputProfile" type="text" id="editName" name="slug" value="{{$blog->slug}}">
                 <label class="formLabel" for="editName">Blog Description</label>
                 <input class="formInputProfile" type="text" id="editName" name="description" value="{{$blog->description}}">
                 <label class="formLabel" for="editEmail">Content</label>

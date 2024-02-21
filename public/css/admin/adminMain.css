@@ -16,6 +16,12 @@
 a{
     text-decoration: none;
 }
+.mobileHideNav{
+    display: none;
+}
+.desktopShowNav{
+    display: flex;
+}
 .adminButton{
     width: 130px;
     height: 45px;
@@ -440,6 +446,15 @@ a{
         display: none;
     }
     #hideText{
+        display: none;
+    }
+    .desktopShowNav{
+        display: none;
+    }
+    .mobileHideNav{
+        display: flex;
+    }
+    #stripeLogo{
         display: none;
     }
 }

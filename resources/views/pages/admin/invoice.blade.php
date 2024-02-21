@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Invoice - #123</title>
+    <title>Invoice</title>
 
     <style type="text/css">
         @page {
@@ -32,7 +32,7 @@
             margin-left: 15px;
         }
         .information {
-            background-color: #60A7A6;
+            background-color: #333333;
             color: #FFF;
         }
         .information .logo {
@@ -42,7 +42,7 @@
             padding: 10px;
         }
         .address{
-            text-align: center;
+            text-align: left;
         }
     </style>
 
@@ -52,9 +52,9 @@
 <div class="information">
     <table style="width: 100%">
         <tr>
-            <td align="center" style="width: 40%;">
-                <h3 class style="margin-left: 40px">{{$user[0]->name}}</h3>
-                <h3 class style="margin-left: 40px">{{$user[0]->email}}</h3>
+            <td align="left" style="width: 40%;">
+                <h3  class="address">{{$user[0]->name}}</h3>
+                <h3  class="address">{{$user[0]->email}}</h3>
                 <div class="address">{{$order['address']}}</div>
 
                 <div class="address">{{$order['city']}}</div>
@@ -69,15 +69,15 @@
             <td align="center">
                 <img src="images/logo/logomain.png" alt="Logo" width="150" class="logo"/>
             </td>
-            <td align="center" style="width: 40%;">
+            <td align="right" style="width: 40%;">
                 <h3 style="margin-left: 50px">Ireland</h3>
-                <h3 style="margin-left: 40px">Irish Safety Training Company</h3>
+                <h3 style="margin-left: 40px">Irish Manual Handling Company</h3>
                 <pre>
-                    https://irish-safetytraining.com
-                    Cherrywood Park
-                    Clondalkin
-                    Dublin22
-                    Ireland
+                    www.Irish-ManualHandling.com
+                    19 Montpelier Hill
+                    Arbour Hill
+                    Stoneybatter, Dublin
+                    D07 A5Y6, Ireland
                 </pre>
             </td>
         </tr>
@@ -89,14 +89,14 @@
     <h3>Invoice id: #{{$order['id']}}</h3>
     <table width="100%">
         <thead>
-        <tr>
+        <tr style="font-size: 17px">
             <td>Description</td>
             <td>Quantity</td>
             <td>Total</td>
         </tr>
         </thead>
         <tbody>
-        <tr>
+        <tr style="font-size: 17px">
             <td>{{$order['product_name']}}</td>
             <td>1</td>
             <td align="left">€ {{$order['paid']}}</td>
@@ -105,8 +105,8 @@
         <tfoot>
         <tr>
             <td colspan="1"></td>
-            <td align="left">Total</td>
-            <td align="left" class="gray">€{{$order['paid']}}</td>
+            <td align="left" style="font-size: 20px">Total</td>
+            <td align="left" style="font-size: 20px" class="gray">€{{$order['paid']}}</td>
         </tr>
         </tfoot>
     </table>

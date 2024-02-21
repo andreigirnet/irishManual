@@ -32,3 +32,9 @@
     margin-top: 50px;
 }
 
+@media only screen and (max-width: 1200px) {
+    .swiperBrand{
+        column-gap: 65px;
+    }
+}
+

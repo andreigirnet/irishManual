@@ -29,7 +29,7 @@ class RegisterEmployeeMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Register Employee Mail',
+            subject: 'Your account was successfully created✅',
         );
     }
 

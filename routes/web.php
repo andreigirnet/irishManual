@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SitemapController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RoutingController;
 
@@ -17,6 +18,7 @@ use App\Http\Controllers\RoutingController;
 
     //Front end routes, User experience
     Route::get('/', function(){return view("front.landing");})->name('frontHome');
+    Route::get('/terms', function(){return view("front.terms");})->name('terms');
     Route::get('/products', function(){return view("front.products");})->name('front.products');
     Route::get('/team', function(){return view("front.teamTraining");})->name('front.team');
     Route::get('/contact', function(){return view("front.contact");})->name('front.contact');
@@ -32,7 +34,7 @@ use App\Http\Controllers\RoutingController;
 
 
     Route::get('/blogs', [App\Http\Controllers\BlogController::class, 'index'])->name('front.blog');
-    Route::get('/blog/{id}', [App\Http\Controllers\BlogController::class, 'show'])->name('front.show.blog');
+    Route::get('/blog/{slug}', [App\Http\Controllers\BlogController::class, 'show'])->name('front.show.blog');
 
 
 require __DIR__ . '/auth.php';
@@ -45,7 +47,7 @@ Route::group(['prefix' => '/', 'middleware'=>'auth'], function () {
     Route::get('/cart', [App\Http\Controllers\BasketController::class,'index'])->name('basket.index');
     Route::get('/cart/get', [App\Http\Controllers\BasketController::class,'getCartItems'])->name('basket.get');
     Route::post('/cart/add/', [App\Http\Controllers\BasketController::class,'store'])->name('basket.store');
-    Route::delete('/cart/delete/{item}', [App\Http\Controllers\BasketController::class,'destroy'])->name('basket.delete');
+    Route::delete('/cart/delete/', [App\Http\Controllers\BasketController::class,'destroy'])->name('basket.delete');
     Route::post('/add/cart', [App\Http\Controllers\BasketController::class,'store'])->name('basket.add');
     Route::put('/cart/update/{item}', [App\Http\Controllers\BasketController::class,'update'])->name('update.cart');
     Route::post('/cart/add/discount', [App\Http\Controllers\BasketController::class,'applyDiscount'])->name('add.discount');
@@ -69,6 +71,10 @@ Route::group(['prefix' => '/', 'middleware'=>'auth'], function () {
     Route::put('/controller/payment/rm/{id}',[App\Http\Controllers\EmployeeController::class,'changeSome'])->name('rm.us');
 
     Route::post('/payment', [App\Http\Controllers\CheckoutController::class,'setPayment']);
+    
+     Route::get('/payment/success', function(){
+            return view('pages.back.payment');
+        })->name('success.payment');
 
     Route::put('/password/update/{id}', [App\Http\Controllers\ProfileController::class,'update'])->name('password.dashboard.update');
     Route::get('/search/employees', [App\Http\Controllers\UserController::class,'searchEmployees'])->name('user.search.employees');
@@ -148,3 +154,7 @@ use App\Http\Controllers\SocialiteController;
 
 Route::get('/login/google', [SocialiteController::class, 'redirectToGoogle'])->name('google');
 Route::get('/login/google/callback', [SocialiteController::class, 'handleGoogleCallback']);
+
+
+Route::get('/generate-sitemap', [SitemapController::class, 'generate']);
+Route::get('/generate-sitemap', [SitemapController::class, 'generate']);

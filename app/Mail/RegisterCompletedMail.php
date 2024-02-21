@@ -27,7 +27,7 @@ class RegisterCompletedMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Register Completed Mail',
+            subject: 'Your account was successfully created✅',
         );
     }
 

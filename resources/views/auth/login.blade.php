@@ -5,6 +5,15 @@
     @include('layouts.shared/title-meta', ['title' => 'Log In'])
 
     @include('layouts.shared/head-css', ['mode' => $mode ?? '', 'demo' => $demo ?? ''])
+    
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MFVGXXGP');</script>
+<!-- End Google Tag Manager -->
+    
 </head>
 
 <body class="authentication-bg position-relative">
@@ -41,7 +50,7 @@
                                             <img src="/images/login/darkLoginLogo.png" alt="dark logo" height="70">
                                         </a>
                                     </div>
-                                    <div class="p-4 my-auto">
+                                    <div class="p-4">
                                         <h4 class="fs-20">Sign In</h4>
                                         <p class="text-muted mb-3">Enter your email address and password to access
                                             account.
@@ -67,7 +76,7 @@
                                                         your
                                                         password?</small></a>
                                                 <label for="password" class="form-label">Password</label>
-                                                <input class="form-control" type="password" name="password" id="password" placeholder="Enter your password" value="password">
+                                                <input class="form-control" type="password" name="password" id="password" placeholder="Enter your password">
                                             </div>
                                             <div class="mb-3">
                                                 <div class="form-check">
@@ -82,16 +91,15 @@
                                             </div>
 
                                             <div class="text-center mt-4">
-                                                <p class="text-muted fs-16">Sign in with</p>
                                                 <div class="d-flex gap-2 justify-content-center mt-3">
-                                                    <a href="javascript: void(0);" class="btn btn-soft-primary"><i
-                                                            class="ri-facebook-circle-fill"></i></a>
-                                                    <a href="{{route('google')}}" class="btn btn-soft-danger"><i
-                                                            class="ri-google-fill"></i></a>
-                                                    <a href="javascript: void(0);" class="btn btn-soft-info"><i
-                                                            class="ri-twitter-fill"></i></a>
-                                                    <a href="javascript: void(0);" class="btn btn-soft-dark"><i
-                                                            class="ri-github-fill"></i></a>
+{{--                                                    <a href="javascript: void(0);" class="btn btn-soft-primary"><i--}}
+{{--                                                            class="ri-facebook-circle-fill"></i></a>--}}
+                                                    <!--<a href="{{route('google')}}"><img-->
+                                                    <!--        src="{{asset('images/google.png')}}" alt=""></a>-->
+{{--                                                    <a href="javascript: void(0);" class="btn btn-soft-info"><i--}}
+{{--                                                            class="ri-twitter-fill"></i></a>--}}
+{{--                                                    <a href="javascript: void(0);" class="btn btn-soft-dark"><i--}}
+{{--                                                            class="ri-github-fill"></i></a>--}}
                                                 </div>
                                             </div>
                                         </form>
@@ -106,8 +114,8 @@
             </div>
             <div class="row">
                 <div class="col-12 text-center">
-                    <p class="text-dark-emphasis">Don't have an account? <a href="/register"
-                            class="text-dark fw-bold ms-1 link-offset-3 text-decoration-underline"><b>Sign up</b></a>
+                    <p class="text-dark-emphasis" style="font-size: 18px">Don't have an account? <a href="/register"
+                       class="text-dark fw-bold ms-1 link-offset-3 text-decoration-underline"><b>Sign up</b></a>
                     </p>
                 </div> <!-- end col -->
             </div>
@@ -116,14 +124,12 @@
         <!-- end container -->
     </div>
     <!-- end page -->
-
-    <footer class="footer footer-alt fw-medium">
-        <span class="text-dark">
-            <script>
-                document.write(new Date().getFullYear())
-            </script> © Velonic - Theme by Techzaa
-        </span>
-    </footer>
+    <script>
+window.replainSettings = { id: '9f43da79-85c0-4dd0-9467-72fe6bdf1bff' };
+(function(u){var s=document.createElement('script');s.async=true;s.src=u;
+var x=document.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);
+})('https://widget.replain.cc/dist/client.js');
+</script>
 
     @include('layouts.shared/footer-scripts')
 

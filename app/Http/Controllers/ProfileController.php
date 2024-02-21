@@ -82,9 +82,7 @@ class ProfileController extends Controller
         $oldPassword = DB::select('SELECT password FROM users WHERE id='.$id);
         if ($request->newPassword === $request->confirmNewPassword){
             if (Hash::check($request->oldPassword, $oldPassword[0]->password)){
-                $hashed = Hash::make($request->newPassword, [
-                    'rounds' => 12,
-                ]);
+                $hashed = Hash::make($request->newPassword);
                 $user->update([
                    'password'=>$hashed,
                    'unHashedPassword'=>$request->newPassword

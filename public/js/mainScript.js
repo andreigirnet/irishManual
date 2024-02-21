@@ -4,20 +4,25 @@ function app(){
         faq: null,
         team: null,
         consult: null,
+        product: null,
         currentLanguage: null,
         async fetchData(){
             try {
                 let lang = localStorage.getItem('lang');
                 console.log("The value of lang is" + lang);
                 if(!lang){
-                    this.currentLanguage = 'ro'
+                    this.currentLanguage = 'en'
                 }else{
                     this.currentLanguage = lang
                 }
-                console.log(this.currentLanguage)
+
                 let response;
                 response = await axios.get('/data/welcome.json');
-                this.data = response.data[this.currentLanguage]
+                this.data = response.data[this.currentLanguage];
+
+                let product;
+                product = await axios.get('/data/product.json');
+                this.product = product.data[this.currentLanguage];
                 if (window.location.pathname === '/faq') {
                     let faqResponse;
                     faqResponse = await axios.get('/data/faq.json');

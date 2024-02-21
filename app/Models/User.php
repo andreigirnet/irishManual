@@ -23,7 +23,8 @@ class User extends Authenticatable
         'password',
         'phone',
         'unHashedPassword',
-        'is_admin'
+        'is_admin',
+        'registeredBy'
     ];
 
     /**

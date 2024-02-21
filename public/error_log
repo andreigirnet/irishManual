@@ -1,0 +1,2 @@
+[20-Jan-2024 12:18:31 Europe/Bucharest] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.2.0". You are running 8.1.27. in /home/fffwawpp/public_html/vendor/composer/platform_check.php on line 24
+[20-Jan-2024 12:18:31 Europe/Bucharest] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.2.0". You are running 8.1.27. in /home/fffwawpp/public_html/vendor/composer/platform_check.php on line 24

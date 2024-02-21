@@ -31,7 +31,7 @@ class CertificateMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Certificate Mail',
+            subject: 'Here is your certificate, congratulations! 🎉',
         );
     }
 

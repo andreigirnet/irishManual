@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Redirect;
 
 class PackageController extends Controller
 {
@@ -116,7 +117,7 @@ class PackageController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, $id)
+public function update(Request $request, $id)
     {
         $request->validate([
             'course_name' => 'required|max:50',
@@ -127,7 +128,8 @@ class PackageController extends Controller
             'course_name'=>$request->course_name,
             'status'     =>$request->status,
         ]);
-        return  redirect()->back()->with('success','The package has been updated successfuly');
+
+        return Redirect::to('/admin/info/user/' . $request->user_id)->with('success', 'Package has been updated');
     }
 
     public function updateOwner(Request $request, $id)

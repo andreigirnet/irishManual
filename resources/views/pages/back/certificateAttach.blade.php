@@ -9,24 +9,23 @@
             width: 100%;
             height: 100%;
         }
-
         #id{
             position: absolute;
-            bottom: 26.4%;
+            bottom: 28%;
             left: 37%;
             font-weight: 600;
             font-size: 13px;
         }
         #valid{
             position: absolute;
-            bottom: 32%;
+            bottom: 33.5%;
             left: 35.5%;
             font-weight: 600;
             font-size: 13px;
         }
         #expiration{
             position: absolute;
-            bottom: 29%;
+            bottom: 30.5%;
             left: 34.5%;
             font-weight: 600;
             font-size: 13px;
@@ -47,11 +46,11 @@
 <body>
 
 <div id="container">
-    <img src="https://irish-safetytraining.com/images/certificate/certificate.jpg" id="image" alt="">
+    <img src="https://www.irish-manualhandling.com/images/certificate/certificate.jpg" id="image" alt="">
     <div id="holder">{{$holder->name}}</div>
     <div id="id">{{$certificate[0]->unique_id}}</div>
-    <div id="valid">{{$certificate[0]->valid_from}}</div>
-    <div id="expiration">{{$certificate[0]->expiration_date}}</div>
+    <div id="valid">{{ \Carbon\Carbon::parse($certificate[0]->valid_from)->format('Y-m-d') }}</div>
+        <div id="expiration">{{ \Carbon\Carbon::parse($certificate[0]->expiration_date)->format('Y-m-d') }}</div>
 </div>
 
 </body>

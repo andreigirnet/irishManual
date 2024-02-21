@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Mail\CertificateMail;
+use App\Mail\ConfirmPaymentMail;
 use App\Models\Basket;
 use App\Models\Order;
 use App\Models\Package;
@@ -10,6 +12,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Storage;
 use Jackiedo\Cart\Cart;
@@ -76,10 +79,10 @@ class CheckoutController extends Controller
                     'currency' => 'eur',
                     'confirmation_method' => 'manual',
                     'confirm' => true,
-                    'statement_descriptor' => 'irish-safetytraining',
+                    'statement_descriptor' => 'Irish-ManualHandling',
                     'customer'=> $customer->id,
                     'description' => 'Payment made by '. auth()->user()->email,
-                    'return_url' => url('/packages')
+                    'return_url' => url('/payment/success')
                 ]);
             }
             if (isset($json_obj->payment_intent_id)) {
@@ -101,7 +104,7 @@ class CheckoutController extends Controller
         # Note that if your API version is before 2019-02-11, 'requires_action'
         # appears as 'requires_source_action'.
         if ($intent->status == 'requires_action' &&
-            $intent->next_action->type == 'use_stripe_sdk') {
+            $intent->next_action->type == 'redirect_to_url') {
             # Tell the client to handle the action
             echo json_encode([
                 'requires_action' => true,
@@ -132,6 +135,9 @@ class CheckoutController extends Controller
                 $package->save();
             }
             $this->cart->clearItems();
+            
+            Mail::to(auth()->user()->email)->send(new ConfirmPaymentMail());
+            
             $request->session()->flash('success', 'Payment has been received successfully');
             echo json_encode([
                 "success" => true

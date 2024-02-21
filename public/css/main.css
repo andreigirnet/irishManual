@@ -3,14 +3,14 @@
     padding: 0;
     --primary: #333333;
     --hoverColor: #f77500;
-    --yellowColor: #31304d;
+    --yellowColor: #122619 ;
     --textTitle: #414141;
     --mainWidth: 1178px;
     font-family: 'PT Sans Narrow', sans-serif;
 }
 
 .language-picker {
-    position: fixed;
+    position: absolute;
     top: 79px;
     right: 10px;
     display: flex;
@@ -28,7 +28,7 @@
     border: none;
     outline: none;
     cursor: pointer;
-    background: #333333;
+    background: #163020 ;
     color: white;
 }
 
@@ -77,6 +77,10 @@
 }
 a{
     text-decoration: none;
+    color: #0008ff;
+}
+.menuColor{
+    text-decoration: none;
     color: white;
 }
 .cardContainer{
@@ -121,13 +125,14 @@ a{
     text-decoration: none;
     color: black;
 }
-#frontNav{
-    background: var(--primary);
+#frontNav {
+    background: #111611; 
     padding: 0 0px 0 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+
 #mainLogo img{
     width: 156px;
 }
@@ -142,7 +147,7 @@ a{
     column-gap: 20px;
 }
 .navItem{
-    padding: 15px;
+    padding: 10px;
     cursor: pointer;
 }
 
@@ -150,6 +155,7 @@ a .navItem{
     font-size: 18px;
     font-weight: bold;
     text-transform: uppercase;
+    letter-spacing: 1px;
 }
 #loginMenu{
     display: flex;

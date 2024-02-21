@@ -5,6 +5,8 @@
     <div class="dashWrapper" x-data="{
             containerWidth: 0,
             showModal: false,
+            correctCount: 0,
+            wrongCount: 0,
             packageId: '{{ $packagesOwnedByUser[0]->id }}',
             status: '{{$packagesOwnedByUser[0]->status}}',
             showProgressBar: 'freeze',
@@ -97,25 +99,25 @@
             checkResult: function()
             {
                if(this.submittedAnswers.length === 10){
+                  let correctCount = 0;
+                  let wrongCount = 0;
                   let match = 0;
-                  for(let i = 0; i<= this.submittedAnswers.length; i++)
-                  {
-                    if(this.submittedAnswers[i] === this.correctAnswers[i])
-                    {
-                      match++;
+                   for (let i = 0; i < this.submittedAnswers.length; i++) {
+                        if (this.submittedAnswers[i] === this.correctAnswers[i]) {
+                            correctCount++;
+                        } else {
+                            wrongCount++;
+                        }
                     }
-                  }
-                  if(match > 7)
-                  {
-                    this.tryAgainButton = false;
-                    this.showModal = true;
-                    match = 0
-                  }
-                  else
-                  {
-                    this.tryAgainButton = true;
-                    match = 0;
-                  }
+                     this.correctCount = correctCount;
+                     this.wrongCount = wrongCount;
+                    if (correctCount > 7) {
+                        this.tryAgainButton = false;
+                        this.showModal = true;
+                    } else {
+                        this.tryAgainButton = true;
+                    }
+
                }
             },
             toggleAnswer: function(){
@@ -255,10 +257,10 @@
             }
         }"
          x-init="getCourseItems">
-        <div class="modalCourseComplete" x-cloak x-show="showModal">
+        <div class="modalCourseComplete" x-cloak x-show="showModal" style="z-index: 11">
             <div class="modalTitle" style="text-align: center">Congratulations you passed the test! </div>
             <div class="modalTitle">IMPORTANT</div>
-            <div class="modalText">Please notice, you must complete your self assessment with our team as required, so you can get the full certificate straight away after that.  This training is covering the full theory and practical part as required by Irish Legislation and regarding that you can use your certificate for any jobs for 3 years after the full course is completed. The self assessment it’s delivered online.
+            <div class="modalText">Please notice, you must complete your self assessment with our team as required, so you can get the full certificate straight away after that.  This training is covering the full theory and practical part as required by Irish Legislation and regarding that you can use your certificate for any jobs for 3 years after the full course is completed. The self assessment itâ€™s delivered online.
                 <br>
 
                 <br>
@@ -269,8 +271,8 @@
             </div>
             <div class="modalTitle">Contact Us Via WhatsApp On this line</div>
             <div class="modalTitle">+353 {{config('app.telephone')}} texts only</div>
-            <div class="modalTitle" style="text-align: center">Tap the WhatsApp ➤ <span><a href="https://wa.me/353894631967"><img src="{{asset('images/logo/whatsapp.png')}}" style="width: 35px; cursor: pointer" alt=""></a></span>  to switch to our chat instantly.</div>
-            <div class="modalTitle" style="text-align: center">Press here 👇 to continue</div>
+            <div class="modalTitle" style="text-align: center">Tap the WhatsApp âž¤ <span><a href="https://wa.me/353894631967"><img src="{{asset('images/logo/whatsapp.png')}}" style="width: 35px; cursor: pointer" alt=""></a></span>  to switch to our chat instantly.</div>
+            <div class="modalTitle" style="text-align: center">Press here ðŸ‘‡ to continue</div>
             <div class="confirmCourseButton" style="display: flex; align-items: center; justify-content: center; margin-top: 20px" @click="showVideo">UNDERSTOOD</div>
         </div>
         <div class="landscape">
@@ -307,7 +309,7 @@
                 <div class="progresItem" @click="setStage(4)" x-bind:class="{ 'isActiveClass': isActive === 4 }">4</div>
                 <div class="progresItem" x-bind:class="{ 'isActiveClass': isActive === 5 }">Test</div>
             </div>
-            <div class="videoContainer" x-show="video">
+            <div class="videoContainer"  x-cloak x-show="video" style="position: relative; z-index: 8">
                 <video autoplay muted controls class="practicalVideo" id="practiceVideo">
                     <source src="{{asset('video/practical.mp4')}}" type="video/mp4">
                 </video>
@@ -324,120 +326,131 @@
                     If you prefer, you can book a live video call with one of our instructors to complete the self-assessment. To do so, send a text message with your full name and the email address used for your training, along with your request. All certificates are emailed immediately after the full course is completed.
                     <br>
 
-                    Send your video demonstration to our team via the WhatsApp chat at 0{{config('app.telephone')}}, (Or you can press on this icon) <span><a href="https://wa.me/353894631967"><img src="{{asset('images/logo/whatsapp.png')}}" style="width: 35px; cursor: pointer" alt=""></a></span> , and our instructors will promptly evaluate it. Our team provides assistance during working hours, and in some cases, outside these hours, ensuring a prompt response during our fixed hours.
+                    Send your video demonstration to our team via the WhatsApp chat at 0{{config('app.telephone')}}, (Or you can press on this icon) <a href="https://wa.me/353894631967" style="z-index: 3"><img src="{{asset('images/logo/whatsapp.png')}}" style="width: 35px; cursor: pointer" alt=""></a> , and our instructors will promptly evaluate it. Our team provides assistance during working hours, and in some cases, outside these hours, ensuring a prompt response during our fixed hours.
                     <br>
                     <br>
 
                     I hope this helps! Let me know if you have any further questions or if there's anything else I can assist you with.
                 </div>
             </div>
-            <div class="courseContainer" id="courseContainer" x-on:landscape="setScreen">
-                <img id="eyeIcon" @click="showHideSlide" x-show="showEye" src="{{asset('images/icons/eye.png')}}" alt="Show hide image">
-                <div class="courseSlider" id="courseSlider" x-show="showSlider">
-                    <div class="courseStage" x-show="stage === 1">
-                        <template x-for="slide in courses.stage_1">
-                            <div class="slide" x-bind:style="'background-image: url(../..' + slide.img + '); background-size: cover; background-repeat: no-repeat; width: ' + containerWidth + 'px;'">
-                                <div class="slideAnswer" x-show="answer" x-text="slide.answer"></div>
-                                <div class="slideContent" x-show="showHideContent">
-                                    <div class="slideTitle" x-text="slide.title"></div>
-                                    <div class="slideSubText" x-text="slide.content"></div>
-                                    <template x-for="bullet in slide.bullets">
-                                        <div class="bulletPoint">
-                                            <img src="{{asset('images/arrows/right-yellow-arrow.png')}}" alt="">
-                                            <div class="bulletText" x-text="bullet"></div>
-                                        </div>
-                                    </template>
+                <div class="courseContainer" id="courseContainer" x-on:landscape="setScreen">
+                    <img id="eyeIcon" @click="showHideSlide" x-show="showEye" src="{{asset('images/icons/eye.png')}}" alt="Show hide image">
+                    <div class="courseSlider" id="courseSlider" x-show="showSlider">
+                        <div class="courseStage" x-show="stage === 1">
+                            <template x-for="slide in courses.stage_1">
+                                <div class="slide" x-bind:style="'background-image: url(../..' + slide.img + '); background-size: cover; background-repeat: no-repeat; width: ' + containerWidth + 'px;'">
+                                    <div class="slideAnswer" x-show="answer" x-text="slide.answer"></div>
+                                    <div class="slideContent" x-show="showHideContent">
+                                        <div class="slideTitle" x-text="slide.title"></div>
+                                        <div class="slideSubText" x-text="slide.content"></div>
+                                        <template x-for="bullet in slide.bullets">
+                                            <div class="bulletPoint">
+                                                <img src="{{asset('images/arrows/right-yellow-arrow.png')}}" alt="">
+                                                <div class="bulletText" x-text="bullet"></div>
+                                            </div>
+                                        </template>
+                                    </div>
+                                    <div class="showAnswer" x-show="slide.answer" @click="toggleAnswer">Show Answer</div>
                                 </div>
-                                <div class="showAnswer" x-show="slide.answer" @click="toggleAnswer">Show Answer</div>
-                            </div>
-                        </template>
-                    </div>
-                    <div class="courseStage" x-show="stage === 2">
-                        <template x-for="slide in courses.stage_2">
-                            <div class="slide" x-bind:style="'background-image: url(../..' + slide.img + '); background-size: cover; background-repeat: no-repeat; width: ' + containerWidth + 'px;'">
-                                <div class="slideAnswer" x-show="answer" x-text="slide.answer"></div>
-                                <div class="slideContent" x-show="showHideContent">
-                                    <div class="slideTitle" x-text="slide.title"></div>
-                                    <div class="slideSubText" x-text="slide.content"></div>
-                                    <template x-for="bullet in slide.bullets">
-                                        <div class="bulletPoint">
-                                            <img src="{{asset('images/arrows/right-yellow-arrow.png')}}" alt="">
-                                            <div class="bulletText" x-text="bullet"></div>
-                                        </div>
-                                    </template>
+                            </template>
+                        </div>
+                        <div class="courseStage" x-show="stage === 2">
+                            <template x-for="slide in courses.stage_2">
+                                <div class="slide" x-bind:style="'background-image: url(../..' + slide.img + '); background-size: cover; background-repeat: no-repeat; width: ' + containerWidth + 'px;'">
+                                    <div class="slideAnswer" x-show="answer" x-text="slide.answer"></div>
+                                    <div class="slideContent" x-show="showHideContent">
+                                        <div class="slideTitle" x-text="slide.title"></div>
+                                        <div class="slideSubText" x-text="slide.content"></div>
+                                        <template x-for="bullet in slide.bullets">
+                                            <div class="bulletPoint">
+                                                <img src="{{asset('images/arrows/right-yellow-arrow.png')}}" alt="">
+                                                <div class="bulletText" x-text="bullet"></div>
+                                            </div>
+                                        </template>
+                                    </div>
+                                    <div class="showAnswer" x-show="slide.answer" @click="toggleAnswer">Show Answer</div>
                                 </div>
-                                <div class="showAnswer" x-show="slide.answer" @click="toggleAnswer">Show Answer</div>
-                            </div>
-                        </template>
-                    </div>
-                    <div class="courseStage" x-show="stage === 3">
-                        <template x-for="slide in courses.stage_3">
-                            <div class="slide" x-bind:style="'background-image: url(../..' + slide.img + '); background-size: cover; background-repeat: no-repeat; width: ' + containerWidth + 'px;'">
-                                <div class="slideAnswer" x-show="answer" x-text="slide.answer"></div>
-                                <div class="slideContent" x-show="showHideContent">
-                                    <div class="slideTitle" x-text="slide.title"></div>
-                                    <div class="slideSubText" x-text="slide.content"></div>
-                                    <template x-for="bullet in slide.bullets">
-                                        <div class="bulletPoint">
-                                            <img src="{{asset('images/arrows/right-yellow-arrow.png')}}" alt="">
-                                            <div class="bulletText" x-text="bullet"></div>
-                                        </div>
-                                    </template>
+                            </template>
+                        </div>
+                        <div class="courseStage" x-show="stage === 3">
+                            <template x-for="slide in courses.stage_3">
+                                <div class="slide" x-bind:style="'background-image: url(../..' + slide.img + '); background-size: cover; background-repeat: no-repeat; width: ' + containerWidth + 'px;'">
+                                    <div class="slideAnswer" x-show="answer" x-text="slide.answer"></div>
+                                    <div class="slideContent" x-show="showHideContent">
+                                        <div class="slideTitle" x-text="slide.title"></div>
+                                        <div class="slideSubText" x-text="slide.content"></div>
+                                        <template x-for="bullet in slide.bullets">
+                                            <div class="bulletPoint">
+                                                <img src="{{asset('images/arrows/right-yellow-arrow.png')}}" alt="">
+                                                <div class="bulletText" x-text="bullet"></div>
+                                            </div>
+                                        </template>
+                                    </div>
+                                    <div class="showAnswer" x-show="slide.answer" @click="toggleAnswer">Show Answer</div>
                                 </div>
-                                <div class="showAnswer" x-show="slide.answer" @click="toggleAnswer">Show Answer</div>
-                            </div>
-                        </template>
-                    </div>
-                    <div class="courseStage" x-show="stage === 4">
-                        <template x-for="slide in courses.stage_4">
-                            <div class="slide" x-bind:style="'background-image: url(../..' + slide.img + '); background-size: cover; background-repeat: no-repeat; width: ' + containerWidth + 'px;'">
-                                <div class="slideAnswer" x-show="answer" x-text="slide.answer"></div>
-                                <div class="slideContent" x-show="showHideContent">
-                                    <div class="slideTitle" x-text="slide.title"></div>
-                                    <div class="slideSubText" x-text="slide.content"></div>
-                                    <template x-for="bullet in slide.bullets">
-                                        <div class="bulletPoint">
-                                            <img src="{{asset('images/arrows/right-yellow-arrow.png')}}" alt="">
-                                            <div class="bulletText" x-text="bullet"></div>
-                                        </div>
-                                    </template>
+                            </template>
+                        </div>
+                        <div class="courseStage" x-show="stage === 4">
+                            <template x-for="slide in courses.stage_4">
+                                <div class="slide" x-bind:style="'background-image: url(../..' + slide.img + '); background-size: cover; background-repeat: no-repeat; width: ' + containerWidth + 'px;'">
+                                    <div class="slideAnswer" x-show="answer" x-text="slide.answer"></div>
+                                    <div class="slideContent" x-show="showHideContent">
+                                        <div class="slideTitle" x-text="slide.title"></div>
+                                        <div class="slideSubText" x-text="slide.content"></div>
+                                        <template x-for="bullet in slide.bullets">
+                                            <div class="bulletPoint">
+                                                <img src="{{asset('images/arrows/right-yellow-arrow.png')}}" alt="">
+                                                <div class="bulletText" x-text="bullet"></div>
+                                            </div>
+                                        </template>
+                                    </div>
+                                    <div class="showAnswer" x-show="slide.answer" @click="toggleAnswer">Show Answer</div>
                                 </div>
-                                <div class="showAnswer" x-show="slide.answer" @click="toggleAnswer">Show Answer</div>
-                            </div>
-                        </template>
-                    </div>
-                    <div class="courseStage" x-show="stage === 5">
-                        <template x-for="slide in courses.test">
-                            <div class="slide" x-bind:style="'background-image: url(../..' + slide.img + '); background-size: cover; background-repeat: no-repeat; width: ' + containerWidth + 'px;'">
-                                <div class="slideAnswer" x-show="answer" x-text="slide.answer"></div>
-                                <div class="slideAnswer" x-show="message" x-text="message"></div>
-                                <div class="slideContent" x-show="showHideContent">
-                                    <div class="slideTitle" x-text="slide.title"></div>
-                                    <div class="slideSubText" x-text="slide.content"></div>
-                                    <template x-for="(bullet, index) in slide.bullets">
-                                        <div class="bulletPoint">
-                                            <input type="radio" name="answer" x-on:click="selectedAnswer = index + 1">
-                                            <div class="bulletText" x-text="bullet" ></div>
-                                        </div>
-                                    </template>
-                                    <div x-show="slide.answer" @click="submitAnswer()" class="submitTestQuesstion">Next</div>
-                                    <div x-show="showStartTest" @click="startTest" class="submitTestQuesstion">Start Test</div>
+                            </template>
+                        </div>
+                        <div class="courseStage" x-show="stage === 5">
+                            <template x-for="slide in courses.test">
+                                <div class="slide" x-bind:style="'background-image: url(../..' + slide.img + '); background-size: cover; background-repeat: no-repeat; width: ' + containerWidth + 'px;'">
+                                    <div class="slideAnswer" x-show="answer" x-text="slide.answer"></div>
+                                    <div class="slideAnswer" x-show="message" x-text="message"></div>
+                                    <div class="slideContent" x-show="showHideContent">
+                                        <div class="slideTitle" x-text="slide.title"></div>
+                                        <div class="slideSubText" x-text="slide.content"></div>
+                                        <template x-for="(bullet, index) in slide.bullets">
+                                            <div class="bulletPoint">
+                                                <input type="radio" name="answer" x-on:click="selectedAnswer = index + 1">
+                                                <div class="bulletText" x-text="bullet" ></div>
+                                            </div>
+                                        </template>
+                                        <div x-show="slide.answer" @click="submitAnswer()" class="submitTestQuesstion">Next</div>
+                                        <div x-show="showStartTest" @click="startTest" class="submitTestQuesstion">Start Test</div>
+                                    </div>
                                 </div>
-                            </div>
-                        </template>
+                            </template>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="navButtons">
-                <div class="navButton" x-show="showNav" @click="prevSlide">Previous</div>
-                <template x-if="tryAgainButton">
-                    <div class="tryAgainDiv">
-                        <div class="tryAgain">Please try Again you dit not pass:</div>
-                        <div class="tryAgainButton" @click="resetTest">Try Again The Test</div>
-                    </div>
-                </template>
-                <div class="navButton" x-show="showNav" @click="nextSlide">Next</div>
-            </div>
+                <div class="navButtons">
+                    <div class="navButton" x-show="showNav" @click="prevSlide">⬅️Previous</div>
+                    <template x-if="tryAgainButton">
+                        <div class="tryAgainDiv">
+                            <div class="answers">
+                                <div class="answersDiv">
+                                    <h2>Correct Answers-</h2>
+                                    <div x-text="correctCount" style="font-size: 22px"></div>
+                                </div>
+                                <div class="answersDiv">
+                                    <h2>Wrong Answers-</h2>
+                                    <div x-text="wrongCount" style="font-size: 22px"></div>
+                                </div>
+
+                            </div>
+                            <div class="tryAgain">Please try Again you dit not pass:</div>
+                            <div class="tryAgainButton"  @click="resetTest">Try Again The Test</div>
+                        </div>
+                    </template>
+                    <div class="navButton" x-show="showNav" @click="nextSlide">Next➡️</div>
+                </div>
         </div>
     </div>
     <script src="{{asset("js/course.js")}}" defer></script>

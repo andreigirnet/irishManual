@@ -5,13 +5,14 @@
         </div>
     </a>
     <div id="navMenu">
-        <a href="{{route('frontHome')}}"><div class="navItem" x-text="data.navigation[0]">Home</div></a>
-        <a href="{{route('front.faq')}}"><div class="navItem" id="attentionItem" x-text="data.navigation[1]">Please Read Faq's</div></a>
+        <a href="{{route('frontHome')}}"><div class="navItem menuColor" x-text="data.navigation[0]">Home</div></a>
+        <a href="{{route('front.faq')}}"><div class="navItem menuColor" id="attentionItem" x-text="data.navigation[1]">Please Read Faq's</div></a>
 {{--        <div class="navItem"><a href="{{route('front.products')}}">Online Courses</a></div>--}}
-        <a href="{{route('front.team')}}"><div class="navItem" x-text="data.navigation[2]">Team Training</div></a>
-        <a href="{{route('front.consulting')}}"><div class="navItem" x-text="data.navigation[3]">Consulting</div></a>
-        <a href="{{route('front.contact')}}"><div class="navItem" x-text="data.navigation[4]">Contact Us</div></a>
-        <a href="{{route('front.blog')}}"><div class="navItem" x-text="data.navigation[5]">Blog</div></a>
+        <a href="{{route('front.team')}}"><div class="navItem menuColor" x-text="data.navigation[2]">Team Training</div></a>
+        <a href="{{route('front.consulting')}}"><div class="navItem menuColor" x-text="data.navigation[3]">Consulting</div></a>
+        <a href="{{route('front.blog')}}"><div class="navItem menuColor" x-text="data.navigation[5]">Blog</div></a>
+        <a href="{{route('front.contact')}}"><div class="navItem menuColor" x-text="data.navigation[4]">Contact Us</div></a>
+        
     </div>
     <div class="language-picker">
         <div x-cloak x-show="currentLanguage !== null">

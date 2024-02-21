@@ -28,8 +28,9 @@
 
             <!-- Sidebar Menu Toggle Button -->
             <button class="button-toggle-menu" style="display: flex;width: 164px; align-items: center; column-gap: 5px" id="hideNavSide">
-                <i class="ri-menu-line"></i>
-                <span id="hideText">← Hide the Taskbar</span>
+                <i class="ri-arrow-left-circle-fill desktopShowNav"></i>
+                <i class="ri-menu-unfold-fill mobileHideNav"></i>
+                <span id="hideText"> Hide the Taskbar</span>
             </button>
 
             <!-- Horizontal Menu Toggle Button -->
