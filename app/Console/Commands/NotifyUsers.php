@@ -33,12 +33,12 @@ class NotifyUsers extends Command
         $currentDateTime = Carbon::now();
 
         $currentDateTimeString = $currentDateTime->toDateTimeString();
-
+        $this->info($currentDateTimeString);
         $query = "
                     SELECT users.*
                     FROM users
                     LEFT JOIN orders ON users.id = orders.user_id
-                    WHERE users.created_at <= DATE_SUB('$currentDateTimeString', INTERVAL 1 DAY)
+                    WHERE users.created_at >= DATE_SUB('$currentDateTimeString', INTERVAL 1 DAY)
                     AND orders.user_id IS NULL
                 ";
 
@@ -46,7 +46,8 @@ class NotifyUsers extends Command
         $users = DB::select($query);
 
         foreach ($users as $user) {
-            Mail::to($user->email)->send(new NotifyMail());
+            $this->info($user->email);
+//            Mail::to($user->email)->send(new NotifyMail());
         }
 
         $this->info('Reminder emails sent successfully.');
