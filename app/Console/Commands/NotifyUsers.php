@@ -46,8 +46,7 @@ class NotifyUsers extends Command
         $users = DB::select($query);
 
         foreach ($users as $user) {
-            $this->info($user->email);
-//            Mail::to($user->email)->send(new NotifyMail());
+            Mail::to($user->email)->send(new NotifyMail());
         }
 
         $this->info('Reminder emails sent successfully.');
