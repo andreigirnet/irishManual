@@ -5,6 +5,6 @@
     You can access our website at any time by logging in with the email address used for registration and your password.
     Should you require further information or assistance, please use the chat feature on our website or reach out to us directly at 0894631967 or through WhatsApp.
 
-    Kind regards,<br>
+    Kind regards,
     Irish Manual Handling Team
 </x-mail::message>

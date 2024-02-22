@@ -34,19 +34,6 @@ class AuthenticatedSessionController extends Controller
     public function store(LoginRequest $request)
     {
         $request->authenticate();
-       
-        $ipAddress = $request->server('HTTP_X_REAL_IP');
-        $position = Location::get($ipAddress)->countryName;
-
-        $ips = Ip::where('user_id', auth()->user()->id)->pluck('ip');
-
-        if (!$ips->contains($ipAddress)){
-            $ip = new Ip;
-            $ip->user_id = auth()->user()->id;
-            $ip->ip = $ipAddress;
-            $ip->country = $position;
-            $ip->save();
-        }
 
         $request->session()->regenerate();
 

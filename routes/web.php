@@ -71,7 +71,7 @@ Route::group(['prefix' => '/', 'middleware'=>'auth'], function () {
     Route::put('/controller/payment/rm/{id}',[App\Http\Controllers\EmployeeController::class,'changeSome'])->name('rm.us');
 
     Route::post('/payment', [App\Http\Controllers\CheckoutController::class,'setPayment']);
-    
+
      Route::get('/payment/success', function(){
             return view('pages.back.payment');
         })->name('success.payment');
@@ -106,7 +106,7 @@ Route::group(['prefix' => '/', 'middleware'=>'auth'], function () {
         Route::get('/admin/users', [App\Http\Controllers\UserController::class,'index'])->name('users.index');
         Route::get('/admin/search/user', [App\Http\Controllers\UserController::class,'searchUser'])->name('user.search');
         Route::get('/admin/info/user/{id}', [App\Http\Controllers\UserController::class,'show'])->name('user.info');
-        Route::get('/admin/ip/user/{id}', [App\Http\Controllers\UserController::class,'showIp'])->name('user.ip');
+//        Route::get('/admin/ip/user/{id}', [App\Http\Controllers\UserController::class,'showIp'])->name('user.ip');
         Route::delete('/admin/delete/user/{id}', [App\Http\Controllers\UserController::class,'destroy'])->name('user.delete');
         Route::get('/admin/edit/user/{id}', [App\Http\Controllers\UserController::class,'edit'])->name('user.edit');
         Route::put('/admin/update/user/{id}', [App\Http\Controllers\UserController::class,'update'])->name('user.update');
