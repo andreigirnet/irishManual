@@ -33,7 +33,6 @@ class NotifyUsers extends Command
         $currentDateTime = Carbon::now();
 
         $currentDateTimeString = $currentDateTime->toDateTimeString();
-        $this->info($currentDateTimeString);
         $query = "
                     SELECT users.*
                     FROM users
