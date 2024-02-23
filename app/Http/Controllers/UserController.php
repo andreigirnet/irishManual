@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Models\Ip;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -87,11 +86,6 @@ class UserController extends Controller
      * Display the specified resource.
      */
 
-    public function showIp(string $id)
-    {
-        $ips = Ip::where('user_id', $id)->get();
-        return view('pages.admin.users.ip', compact('ips'));
-    }
 
 
     public function show(string $id)

@@ -44,7 +44,7 @@
 </script>
 
 </head>
-<body x-data="app()">    
+<body x-data="app()">
 
 @include("frontIncludes/hamburger")
 @include("frontIncludes/responsiveNav")
@@ -61,8 +61,12 @@
             <div class="singleBlogTitleContainer">
                 <h1 class="singleBogTitle">{{$blog->title}}</h1>
             </div>
+
             <div class="imgSingleBlogContainer">
                 <img src="{{asset('images/blogImages/'. $blog->image)}}" alt="" class="singleBlogImage" >
+            </div>
+            <div class="singleBlogTitleContainer" style="margin-top: 10px">
+                <p class="singleBogTitle" style="font-size: 20px; font-weight: 600"><span>Created at: </span>{{$blog->created_at}}</p>
             </div>
             <div class="blogSingleContentContainer">
                 <div class="blogSingleContent">
@@ -71,7 +75,7 @@
             </div>
         </div>
     </div>
-    
+
 <script>
 window.replainSettings = { id: '9f43da79-85c0-4dd0-9467-72fe6bdf1bff' };
 (function(u){var s=document.createElement('script');s.async=true;s.src=u;

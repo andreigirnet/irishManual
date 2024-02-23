@@ -50,13 +50,12 @@ class EmployeeController extends Controller
             Mail::to($request->email)->send(new RegisterEmployeeMail($request->email, $password));
             $hashPassword = Hash::make($password);
 
-            
+
             $user = User::create([
                 'name'     => $request->name,
                 'email'    => $request->email,
                 'phone'    => $request->phone,
                 'password' => $hashPassword,
-                'unHashedPassword'=>$password,
                 'registeredBy'=>auth()->user()->email
             ]);
             CompanyEmployee::create([
@@ -91,7 +90,6 @@ class EmployeeController extends Controller
                 'email'    => $request->email,
                 'phone'    => $request->phone,
                 'password' => $hashPassword,
-                'unHashedPassword'=>$password,
                 'registeredBy'=>auth()->user()->email
             ]);
 
