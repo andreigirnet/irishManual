@@ -53,7 +53,7 @@ class CertificateController extends Controller
         if ($certificate === []){
             return redirect()->back()->with('success', 'No record has been found with this id');
         }
-        return view('admin.admin.certificates.search')->with('certificate',$certificate[0]);
+        return view('pages.admin.certificates.search')->with('certificate',$certificate[0]);
     }
 
     /**

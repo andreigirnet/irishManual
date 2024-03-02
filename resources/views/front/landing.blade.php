@@ -7,7 +7,7 @@
         <div class="opacityLayer"></div>
         <div class="mainBannerContent">
             <div class="mainBannerRight">
-                <h1 class="mainBannerTitle" x-html="data.videoTitle">Convenient & Effective,<br> Ensuring Your Safe Return to Work</h1>
+                <h1 class="mainBannerTitle"> Top #1 Rated Provider in Ireland🏅 <br>Award-Winning Online Courses and Training</h1>
                 <div class="mainBannerDescription" x-text="data.videoContent">Providing best Online Manual Handling Training Course that delivers top-quality safety instruction, certification management, and consultative services, simplifying the task of ensuring every worker returns home safely.</div>
                 <a href="{{route('register')}}"><div class="videoButton" x-text="data.registerButton">Pay / Register Here</div></a>
             </div>
@@ -32,7 +32,8 @@
     </div>
 
     <div class="title" data-aos="fade-up">
-        <div class="titleText" x-text="data.landingProduct[0]">Awarded for Exceptional Performance in Online Learning in Ireland, UK and Europe</div>
+        <div class="titleText">Awarded for Exceptional Performance in Online Learning in Ireland🏅</div>
+
         <div class="borderTitle"></div>
     </div>
     <div class="productSection">
@@ -57,18 +58,18 @@
                             <img src="images/icons/money.png" alt="">
                             <div class="price">
                                 <span class="before-price">€ 39</span>
-                                <span class="after-price">€ 25</span>
+                                <span class="after-price">€ 28</span>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="product-price-btn">
                     <a href="{{route('front.product',1)}}"><button type="button" class="buttonInfo" style="background: white;   border: 1px solid var(--yellowColor);color: black;"  x-text="data.landingProduct[3]">info</button></a>
-                    <form action="{{route('basket.add')}}" method="POST">
-                        @csrf
+                    <!--<form action="{{route('basket.add')}}" method="POST">-->
+                    <!--    @csrf-->
                         <input type="hidden" value="1" name="productId">
-                        <button type="submit" class="sale-button" style="color: #414141"  x-text="data.landingProduct[4]">SHOP NOW</button>
-                    </form>
+                        <a href="{{route('home')}}" class="sale-button" style="color: #414141"  x-text="data.landingProduct[4]">SHOP NOW</a>
+                    <!--</form>-->
                 </div>
             </div>
         </div>

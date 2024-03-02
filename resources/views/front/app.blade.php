@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {{-- Title --}}
-    <title>Online Manual Handling Course €25 | Practical Training Included </title>
+    <title>Online Manual Handling Course €28 | Practical Training Included </title>
     {{-- Meta description --}}
     <meta name="description" content="Discover Our Fully Online Manual Handling Course! ⭐️ Average Duration: 1 Hour ⭐️ Digital Certificate Provided ⭐️ Unlimited Exam Attempts ⭐️ Recognized in Ireland, UK, and Across Europe ⭐️ Valid for 3 Years">
     <meta name="keywords" content="Manual Handling Courses Online, Best Manual Handling Training Ireland, Manual Handling Certification & Courses, Manual Handling Instructor Certification, Expert Manual Handling Assessment, Compliance with Manual Handling Regulations, Safety in Manual Handling Techniques, Ergonomic Lifting Practices, Efficient Load Handling Methods, Preventing Manual Handling Injuries, Top-Rated Manual Handling Practices in Ireland, Manual Handling Guidelines and Certification, Advanced Manual Handling Training Solutions, Certified Manual Handling Programs, Affordable Manual Handling Certification in Ireland, Professional Manual Handling Courses">

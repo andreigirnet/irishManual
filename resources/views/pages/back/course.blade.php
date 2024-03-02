@@ -260,7 +260,7 @@
         <div class="modalCourseComplete" x-cloak x-show="showModal" style="z-index: 11">
             <div class="modalTitle" style="text-align: center">Congratulations you passed the test! </div>
             <div class="modalTitle">IMPORTANT</div>
-            <div class="modalText">Please notice, you must complete your self assessment with our team as required, so you can get the full certificate straight away after that.  This training is covering the full theory and practical part as required by Irish Legislation and regarding that you can use your certificate for any jobs for 3 years after the full course is completed. The self assessment itâ€™s delivered online.
+            <div class="modalText">Please notice, you must complete your self assessment with our team as required, so you can get the full certificate straight away after that.  This training is covering the full theory and practical part as required by Irish Legislation and regarding that you can use your certificate for any jobs for 3 years after the full course is completed. The self assessment is delivered online.
                 <br>
 
                 <br>
@@ -271,8 +271,8 @@
             </div>
             <div class="modalTitle">Contact Us Via WhatsApp On this line</div>
             <div class="modalTitle">+353 {{config('app.telephone')}} texts only</div>
-            <div class="modalTitle" style="text-align: center">Tap the WhatsApp âž¤ <span><a href="https://wa.me/353894631967"><img src="{{asset('images/logo/whatsapp.png')}}" style="width: 35px; cursor: pointer" alt=""></a></span>  to switch to our chat instantly.</div>
-            <div class="modalTitle" style="text-align: center">Press here ðŸ‘‡ to continue</div>
+            <div class="modalTitle" style="text-align: center">Tap the WhatsApp Icon️ <span><a href="https://wa.me/353894631967"><img src="{{asset('images/logo/whatsapp.png')}}" style="width: 35px; cursor: pointer" alt=""></a></span>  to switch to our chat instantly.</div>
+            <div class="modalTitle" style="text-align: center">Press here 👇 to continue</div>
             <div class="confirmCourseButton" style="display: flex; align-items: center; justify-content: center; margin-top: 20px" @click="showVideo">UNDERSTOOD</div>
         </div>
         <div class="landscape">
@@ -326,11 +326,14 @@
                     If you prefer, you can book a live video call with one of our instructors to complete the self-assessment. To do so, send a text message with your full name and the email address used for your training, along with your request. All certificates are emailed immediately after the full course is completed.
                     <br>
 
-                    Send your video demonstration to our team via the WhatsApp chat at 0{{config('app.telephone')}}, (Or you can press on this icon) <a href="https://wa.me/353894631967" style="z-index: 3"><img src="{{asset('images/logo/whatsapp.png')}}" style="width: 35px; cursor: pointer" alt=""></a> , and our instructors will promptly evaluate it. Our team provides assistance during working hours, and in some cases, outside these hours, ensuring a prompt response during our fixed hours.
+                    Send your video demonstration to our team via the WhatsApp chat at 0{{config('app.telephone')}}, or you can press on this icon 👉  <a href="https://wa.me/353894631967" style="z-index: 3"><img src="{{asset('images/logo/whatsapp.png')}}" style="width: 35px; cursor: pointer" alt=""></a> (and you will be automatically redirected to our WhatsApp chat) and our instructors will promptly evaluate it. Our team provides assistance during working hours, and in some cases, outside these hours, ensuring a prompt response during our fixed hours.
                     <br>
                     <br>
-
-                    I hope this helps! Let me know if you have any further questions or if there's anything else I can assist you with.
+                    We hope this helps! Let us know if you have any further questions or if there's anything else I can assist you with.
+                    <br>
+                    Kind Regards <br>
+                    Irish-ManualHandling.com
+                
                 </div>
             </div>
                 <div class="courseContainer" id="courseContainer" x-on:landscape="setScreen">

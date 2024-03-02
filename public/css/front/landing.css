@@ -497,16 +497,27 @@
 }
 
 .sale-button {
-    background-color: #e9d006;
-    color: #fff;
-    border: none;
-    padding: 12px 24px;
-    font-size: 18px;
+    display: inline-block;
+    width: 150px;
+    box-sizing: border-box;
+    border: transparent;
+    border-radius: 60px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    background-color: #fce001;
     cursor: pointer;
-    border-radius: 5px;
+    outline: none;
+    color: white;
+    font-weight: 600;
+    padding: 12px 24px;
     position: relative;
     animation: pulse 1.5s infinite;
+    text-align: center;
 }
+
+/* Animatie pulsare */
 @keyframes pulse {
     0% {
         transform: scale(1);
@@ -519,9 +530,55 @@
     }
 }
 
+/* Schimbarea culorii la atingere */
 .sale-button:hover {
-    background-color: #d32f2f;
+    background-color: #fec512;
+    color: white; /* Culoarea textului devine albă la atingere */
+
 }
+
+.sale-button {
+    display: inline-block;
+    width: 255px;
+    box-sizing: border-box;
+    border: transparent;
+    border-radius: 20px; /* Marginile rotunjite */
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    background-color: #fce001;
+    cursor: pointer;
+    outline: none;
+    color: white;
+    font-weight: 600;
+    padding: 12px 24px;
+    position: relative;
+    animation: pulse 1.5s infinite;
+    text-align: center;
+}
+
+/* Animatie pulsare */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Schimbarea culorii la atingere */
+.sale-button:hover {
+    background-color: #fec512;
+    color: white; /* Culoarea textului devine albă la atingere */
+}
+
+
+
 .product-icons{
     display: flex;
     align-items: center;

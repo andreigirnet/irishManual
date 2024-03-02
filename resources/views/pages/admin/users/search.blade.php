@@ -54,7 +54,6 @@
                                             </form>
                                             <a href="{{route('user.edit', $user->id)}}" class="editLink"><img src="{{asset('images/icons/edit.png')}}" alt=""></a>
                                             <a href="{{route('user.info', $user->id)}}" class="editLink"><img src="{{asset('images/icons/info.png')}}" alt=""></a>
-                                            <a href="{{route('user.ip', $user->id)}}" class="editLink"><img src="{{asset('images/icons/ip-address.png')}}" alt=""></a>
                                         </td>
                                         <td>{{$user->id}}</td>
                                         <td>{{$user->created_at}}</td>

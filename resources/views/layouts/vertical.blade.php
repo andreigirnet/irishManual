@@ -92,7 +92,7 @@ var x=document.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);
     @include('layouts.shared/footer-scripts')
 
     @vite(['resources/js/layout.js', 'resources/js/main.js'])
-    <script src="js/hideAdminNav.js"></script>
+    <script src="{{asset('js/hideAdminNav.js')}}"></script>
     
     <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MFVGXXGP"

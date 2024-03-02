@@ -40,7 +40,7 @@
             <div class="teamTitle" style="text-align: center;">
                 <div class="modalTitle contact-button">
                     <span>Click the live chat icon on our website ➤</span> 
-                    <span><a href="https://wa.me/353894631967"><img class="whatsapp-icon" src="{{asset('images/logo/replay.png')}}" style="width: 35px; cursor: pointer" alt=""></a></span>  
+                    <span><img class="whatsapp-icon" src="{{asset('images/logo/replay.png')}}" style="width: 35px; cursor: pointer" alt=""></span>
                     <span>available in the bottom right corner whenever you need help; we're online.</span>
                 </div>
             </div>

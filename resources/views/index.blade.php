@@ -79,7 +79,7 @@
                             <img src="images/icons/money.png" alt="">
                             <div class="price">
                                 <span class="before-price">€39</span>
-                                <span class="after-price">€25</span>
+                                <span class="after-price">€28</span>
                             </div>
                         </div>
                     </div>
